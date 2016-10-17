@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8"/>
-   <title>first angular</title>
+   <title>mypage</title>
 <script src="angularjs/angular.js"></script>
 <script type="text/javascript"   src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
@@ -16,9 +16,9 @@ myApp.controller('mycontroller',  function($scope){
 	$scope.data ="어서오세요."
 })
 
-$(document).ready(function(){
-	 $('.slider').slider({full_width: true});
-	  $('#si').addclass("fullscreen");
+$(window).load(function(){
+		$('.slider').addClass("fullscreen");
+	   $('.slider').slider({full_width: true, indicators: false});
 })
 </script>
 </head>
