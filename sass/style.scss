@@ -1,0 +1,94 @@
+$maxcol : 12;
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+html{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+}
+
+
+.row {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+
+
+  &::after {
+    content : "";
+    display: table;
+    clear:both;
+  }
+
+  .col{
+        float: left;
+        box-sizing: border-box;
+        padding: 0 0.75rem;
+        min-height: 1px;
+        &[class*="push-"],
+        &[class*="pull-"] {
+          position: relative;
+        }
+
+        @for $i from 1 through $maxcol {
+          $colwidth : (100% / ($maxcol /$i));
+          &.s#{$i}{
+            width : $colwidth;
+          }
+          &.offset-s#{$i}{
+            margin-left: $colwidth;
+          }
+          &.push-s#{$i}{
+            left : $colwidth;
+          }
+          &.pull-s#{$i}{
+            right : $colwidth
+          }
+    }
+
+    @media only screen and (min-width : 720px) {
+
+        @for $i from 1 through $maxcol {
+          $colwidth : (100% / ($maxcol /$i));
+          &.m#{$i}{
+            width : $colwidth;
+          }
+          &.offset-m#{$i}{
+            margin-left: $colwidth;
+          }
+          &.push-m#{$i}{
+            left : $colwidth;
+          }
+          &.pull-m#{$i}{
+            right : $colwidth
+          }
+        }
+    }
+
+
+    @media only screen and (min-width : 1366px) {
+        @for $i from 1 through $maxcol {
+          $colwidth : (100% / ($maxcol /$i));
+          &.l#{$i}{
+            width : $colwidth;
+          }
+          &.offset-l#{$i}{
+            margin-left: $colwidth;
+          }
+          &.push-l#{$i}{
+            left : $colwidth;
+          }
+          &.pull-l#{$i}{
+            right : $colwidth
+          }
+        }
+    }
+
+
+
+  }
+}

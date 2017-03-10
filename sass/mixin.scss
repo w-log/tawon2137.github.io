@@ -1,0 +1,75 @@
+
+//button mixin
+@mixin wavebackground ($default, $color) {
+  background: #{$default};
+  background: -webkit-radial-gradient(#{$color});
+  background: -o-radial-gradient(#{$color});
+  background: -ms-radial-gradient(#{$color});
+  background: -moz-radial-gradient(#{$color});
+  background: radial-gradient(#{$color});
+}
+@mixin animate ($value){
+  -webkit-animation:#{$value};
+   -moz-animation:#{$value};
+    -ms-animation:#{$value};
+     -o-animation:#{$value};
+        animation:#{$value};
+}
+@mixin keyframesubfix($title , $value) {
+  @-webkit-keyframes #{$title} #{$value}
+  @-moz-keyframes #{$title} #{$value}
+  @-o-keyframes #{$title} #{$value}
+  @-ms-keyframes #{$title} #{$value}
+  @keyframes #{$title} #{$value}
+};
+
+
+@mixin transform($value) {
+  -webkit-transform:#{$value};
+     -moz-transform:#{$value};
+       -o-transform:#{$value};
+      -ms-transform:#{$value};
+          transform:#{$value};
+}
+
+@mixin transform($value) {
+  -webkit-transform:#{$value};
+     -moz-transform:#{$value};
+       -o-transform:#{$value};
+      -ms-transform:#{$value};
+          transform:#{$value};
+}
+
+//icon mixin
+@mixin iconset(){
+
+}
+
+//card mixin
+@mixin transition($value){
+  -webkit-transition: #{$value};
+  -moz-transition: #{$value};
+  -o-transition: #{$value};
+  -ms-transition: #{$value};
+  transition: #{$value};
+}
+@mixin display-flex{
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+@mixin flex-column {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+@mixin flex ($integer){
+  -webkit-flex: $integer;
+    -ms-flex: $integer;
+    flex: $integer;
+}
+@mixin flex-grow ($integer){
+  -webkit-flex-grow: $integer;
+  -ms-flex-positive: $integer;
+  flex-grow: $integer;
+}

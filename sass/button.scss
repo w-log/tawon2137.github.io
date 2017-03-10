@@ -1,0 +1,126 @@
+@import "./mixin.scss";
+@import "./variable.scss";
+@import "./function.scss";
+@import "./extend.scss";
+// @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+//
+//
+// html{
+//   font-family: 'Hanna', serif !important;
+//   background-color: #f1f1f1;
+// }
+
+.tw-btn{
+  @extend .button;
+  height: $button-height-default;
+  line-height: $button-height-default;
+  padding: 0 2rem;
+  border-radius: $button-radius;
+  &-large{
+    @extend .button;
+    padding: 0 2rem;
+    border-radius: $button-radius;
+    height: $button-height-large;
+    line-height: $button-height-large;
+  }
+  &[type="submit"]:hover{
+      background: rgba(255,255,255,0.2);
+  }
+}
+.tw-btn-clear{
+  @extend .button;
+  box-shadow: none;
+  height: $button-height-default;
+  line-height: $button-height-default;
+  padding: 0 2rem;
+  border-radius: $button-radius;
+  background-color : transparent;
+  &:hover{
+      background: rgba(0,0,0,0.1);
+  }
+}
+
+i.fa::before{
+    padding: .1rem;
+}
+
+.tw-btn-Round{
+  @extend .button;
+  border-radius: $button-radius-float;
+  width: $button-float-width;
+  height: $button-float-height;
+  line-height: $button-float-height;
+  @include transform("translate3d(0, 0, 0);");
+  &-large{
+    @extend .button;
+    border-radius: $button-radius-float;
+    width: $button-float-large-width;
+    height: $button-float-large-height;
+    line-height: $button-float-large-height;
+    @include transform("translate3d(0, 0, 0);");
+  }
+}
+
+
+
+.tw-btn-float {
+  height: $button-height-default;
+  line-height: $button-height-default;
+  &-large{
+    @extend .button;
+    height: $button-height-large;
+    line-height: $button-height-large;
+  }
+}
+
+
+.waves-effect {
+    overflow: hidden;
+    position: relative;
+    -webkit-tap-highlight-color:transparent;
+    z-index: 1;
+}
+
+.wave {
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top : -10px;
+  margin-left: -10px;
+  z-index: 0;
+  will-change : transform ,opacity;
+  opacity: 0;
+  pointer-events: none;
+  &.wave-color-white{
+    background: #{waves-color-column-setting($button-color-white)};;
+  }
+  &.wave-color-white2{
+    @include wavebackground(waves-color-column-setting($button-color-white) , waves-color-setting($button-color-white));
+  }
+  &.wave-color-black{
+    background: #{waves-color-column-setting($button-color-black)};
+  }
+  &.wave-color-black2{
+    @include wavebackground(waves-color-column-setting($button-color-black) , waves-color-setting($button-color-black));
+  }
+  &.wave-color-green{
+    background: #{waves-color-column-setting($button-color-green)};
+  }
+  &.wave-color-green2{
+    @include wavebackground(waves-color-column-setting($button-color-green) , waves-color-setting($button-color-green));
+  }
+  &.wave-color-yellow{
+    background: #{waves-color-column-setting($button-color-yellow)};
+  }
+  &.wave-color-yellow2{
+    @include wavebackground(waves-color-column-setting($button-color-yellow) , waves-color-setting($button-color-yellow));
+  }
+  &.wave-color-red{
+    background: #{waves-color-column-setting($button-color-red)};
+  }
+  &.wave-color-red2{
+    @include wavebackground(waves-color-column-setting($button-color-red) , waves-color-setting($button-color-red));
+  }
+}

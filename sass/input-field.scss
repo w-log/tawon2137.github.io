@@ -1,0 +1,192 @@
+@import "./mixin.scss";
+@import "./variable.scss";
+@import "./function.scss";
+@import "./extend.scss";
+//input
+::-webkit-input-placeholder {
+  color: $placeholder-text-color
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: $placeholder-text-color;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: $placeholder-text-color;
+}
+
+:-ms-input-placeholder {
+  color: $placeholder-text-color;
+}
+
+input[type=search] {
+  & :-ms-input-placeholder,
+  ::-moz-placeholder,
+  :-moz-placeholder,
+  ::-webkit-input-placeholder,{
+      font-family:'Material Icons';
+      font-style: normal;
+      font-weight: bold;
+      content: "&#xE87C";
+  }
+}
+
+html{
+  font-size: 12px;
+}
+#logmodal{
+    width: 95%;
+}
+
+@media only screen and (min-width : 720px) {
+  html{
+      font-size: 14px;
+  }
+  #logmodal{
+      width: 55%;
+  }
+}
+
+
+@media only screen and (min-width : 1024px) {
+  html{
+      font-size: 16px;
+  }
+  #logmodal{
+      width: 30%;
+  }
+}
+
+.tw-input-field{
+    position: relative;
+    margin: .5rem 0;
+  & hr.focusline{
+      position: absolute;
+      background: grey;
+      margin: 0;
+      left: 0;
+      bottom:0;
+      width: calc(100%);
+      height: $input-focusline-height;
+      @include transition(all 0.3s ease);
+      @include transform(scaleX(0));
+      z-index: 1;
+      border : 0;
+  }
+  & hr.bottomline{
+      margin: 0;
+      z-index: -1;
+      border-width: $input-bottomline-height;
+      border-style: inset;
+  }
+  // & i.material-icons {
+  //   position: relative;
+  //   height: $input-height;
+  //   line-height: $input-height;
+  //   top:$input-height;
+  //   color : $placeholder-text-color;
+  // }
+}
+
+
+//input type 입력태그
+input:not([type]),
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=time],
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=tel],
+input[type=number],
+input[type=search] {
+    width: 100%;
+    background-color: transparent;
+    box-shadow: none;
+    height: $input-height;
+    font-size: $input-font-size;
+    @include transition(all 0.3s ease);
+    border: 0;
+    padding: $input-padding;
+    &:focus{
+        outline: 0;
+    }
+    &:focus + hr.focusline{
+      @include transform(scaleX(1));
+    }
+    &.valid + hr.focusline{
+      background: blue;
+      @include transform(scaleX(1));
+    }
+    &disabled{
+    }
+}
+
+//select box
+
+.tw-select-box{
+    display: block;
+    & .select-input {
+      cursor: pointer;
+    }
+    & .select-dropdown {
+       top:0px;
+       left:0px;
+       & li.selected{
+          background: grey;
+       }
+       & li.disabled{
+         color : grey;
+       }
+    }
+    & .select-caret-down{
+        position: absolute;
+        margin: auto 0;
+        right: 0;
+        top:0;
+        bottom: 0;
+        height: 15px;
+        font-size: 15px;
+        z-index: -1;
+    }
+}
+
+.tw-dropdown{
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  will-change : max-height,opacity;
+  overflow-y:auto;
+  width: 100%;
+  z-index: 999;
+  box-shadow : $dropdown-box-shadow;
+  background-color: white;
+  max-height: 500px;
+  display: none;
+  opacity: 0;
+  @include transform(scaleY(0.7));
+  border-radius:$dropdown-box-radius;
+  -webkit-tap-highlight-color:transparent;
+  & li{
+      text-transform : none;
+      list-style-type: none;
+      min-height: 2.5rem;
+      line-height: 2.5rem;
+      text-align: left;
+      cursor: pointer;
+      &:hover{
+        background: #f1f1f1;
+      }
+      &.disabled{
+          &:hover{
+            background: none;
+          }
+      }
+      & span{
+        font-weight: bold;
+        padding: 0.5rem 1rem;
+      }
+  }
+}

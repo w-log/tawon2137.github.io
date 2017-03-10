@@ -1,0 +1,67 @@
+@import "./mixin.scss";
+@import "./variable.scss";
+@import "./function.scss";
+
+  .tw-navbar{
+      height: $nav-height;
+      line-height: $nav-height;
+      border-radius: $nav-radius;
+      top : 0px;
+      width: 100%;
+      box-shadow: $nav-shadow;
+      will-change : opacity;
+      @include transition(all .2s ease-in);
+      background: white;
+      z-index: 100;
+      &.clear{
+          box-shadow: none;
+          background-color: transparent;
+      }
+      & ul{
+        padding: 0;
+        position: relative;
+        top:0;
+        left:0;
+        & .right{
+          float: right;
+        }
+        & .right{
+          float: left;
+        }
+        & li{
+          display: block;
+          float: left;
+          position: relative;
+          padding: 0 2rem;
+          text-align: center;
+          background-color: transparent;
+          & a{
+            cursor: pointer;
+            &:hover{
+              background: rgba(0,0,0,0.1);
+            }
+          }
+
+        }
+      }
+      & .left{
+        float: left;
+      }
+      & .right{
+        float: right;
+      }
+      & .center{
+          display: inline-block;
+          padding: 0;
+          position: absolute;
+          left : 50%;
+          @include transform(translateX(-50%));
+      }
+
+
+      & .logoTitle{
+        font-size: 2rem;
+        color:black;
+        // transform: translate(-50%, -50%);
+      }
+  }

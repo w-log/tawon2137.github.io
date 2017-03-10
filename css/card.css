@@ -1,0 +1,66 @@
+.card {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px; }
+  .card.sidetemple {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+    .card.sidetemple .side-content {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1; }
+      .card.sidetemple .side-content .card-content {
+        -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1; }
+    .card.sidetemple .sideimg {
+      max-width: 50%;
+      position: relative;
+      bottom: 0px; }
+      .card.sidetemple .sideimg img {
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        max-width: 100%;
+        width: auto;
+        border-radius: 5px 0 0 5px; }
+  .card .card-title {
+    display: block;
+    margin: 0;
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: left;
+    padding: 0.2rem; }
+  .card .card-profile img {
+    border-radius: 5px 5px 0 0;
+    width: 100%; }
+  .card .card-content {
+    border-radius: 5px;
+    padding: 0.75rem; }
+  .card .card-action {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1.5rem; }
+    .card .card-action a:not(.tw-btn) {
+      margin-right: 20px;
+      color: #ffb300;
+      text-decoration: none;
+      -webkit-transition: all 0.2s ease-in;
+      -moz-transition: all 0.2s ease-in;
+      -o-transition: all 0.2s ease-in;
+      -ms-transition: all 0.2s ease-in;
+      transition: all 0.2s ease-in; }
+      .card .card-action a:not(.tw-btn):hover {
+        color: #ff6f00;
+        text-decoration: underline; }

@@ -1,0 +1,7 @@
+//button waves color fn
+@function waves-color-setting($colorhex) {
+  @return "rgba("+$colorhex+", 0.1) 0,rgba("+$colorhex+", 0.3) 30%,rgba("+$colorhex+", 0.4) 40%,rgba("+$colorhex+", 0.5) 50%, rgba("+$colorhex+", 0.6) 60%, rgba("+$colorhex+", 0.7) 70%, rgba("+$colorhex+", 0.5) 60%, rgba("+$colorhex+", 0.4) 70%, rgba("+$colorhex+", 0)";
+}
+@function waves-color-column-setting($colorhex) {
+  @return "rgba("+$colorhex+", 0.4)";
+}
