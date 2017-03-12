@@ -1,7 +1,6 @@
 @import "./mixin.scss";
 @import "./variable.scss";
 @import "./function.scss";
-@import "./extend.scss";
 //input
 ::-webkit-input-placeholder {
   color: $placeholder-text-color
@@ -60,6 +59,7 @@ html{
 .tw-input-field{
     position: relative;
     margin: .5rem 0;
+    user-select : none;
   & hr.focusline{
       position: absolute;
       background: grey;
@@ -72,6 +72,9 @@ html{
       @include transform(scaleX(0));
       z-index: 1;
       border : 0;
+      user-select: none;
+      -webkit-user-drag: none;
+      -webkit-tap-highlight-color: transparent;
   }
   & hr.bottomline{
       margin: 0;
@@ -128,6 +131,9 @@ input[type=search] {
 
 .tw-select-box{
     display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: transparent;
     & .select-input {
       cursor: pointer;
     }
@@ -168,7 +174,6 @@ input[type=search] {
   opacity: 0;
   @include transform(scaleY(0.7));
   border-radius:$dropdown-box-radius;
-  -webkit-tap-highlight-color:transparent;
   & li{
       text-transform : none;
       list-style-type: none;

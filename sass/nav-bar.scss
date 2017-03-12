@@ -11,35 +11,54 @@
       box-shadow: $nav-shadow;
       will-change : opacity;
       @include transition(all .2s ease-in);
-      background: white;
       z-index: 100;
+      user-select : none;
       &.clear{
+          top: 0;
+          position: absolute;
           box-shadow: none;
           background-color: transparent;
+          color : white;
       }
       & ul{
+        margin: 0;
         padding: 0;
-        position: relative;
+        position: absolute;
         top:0;
         left:0;
+        right: 0;
+        margin: 0 auto;
+        height: 100%;
+        width: 80%;
         & .right{
           float: right;
         }
-        & .right{
+        & .left{
           float: left;
         }
         & li{
           display: block;
-          float: left;
+          float: right;
           position: relative;
-          padding: 0 2rem;
+          padding: $nav-li-padding;
           text-align: center;
           background-color: transparent;
+          @include transition(background 0.2s ease-out);
+          border-radius: 5px;
+          cursor: pointer;
+          font-weight: bold;
+          & a{
+            text-decoration: none;
+            color : inherit;
+          }
+          &.logoTitle{
+            font-size: 2rem;
+          }
+          &:hover{
+            background: rgba(0,0,0,0.3);
+          }
           & a{
             cursor: pointer;
-            &:hover{
-              background: rgba(0,0,0,0.1);
-            }
           }
 
         }
@@ -56,12 +75,5 @@
           position: absolute;
           left : 50%;
           @include transform(translateX(-50%));
-      }
-
-
-      & .logoTitle{
-        font-size: 2rem;
-        color:black;
-        // transform: translate(-50%, -50%);
       }
   }

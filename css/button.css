@@ -16,7 +16,10 @@
   transition: all 0.2s ease-out;
   outline: 0;
   font-family: inherit;
-  font-size: inherit; }
+  font-size: inherit;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent; }
 
 .tw-btn {
   height: 36px;
@@ -39,7 +42,7 @@
   border-radius: 3px;
   background-color: transparent; }
   .tw-btn-clear:hover {
-    background: rgba(0, 0, 0, 0.1); }
+    background: rgba(0, 0, 0, 0.3); }
 
 i.fa::before {
   padding: .1rem; }

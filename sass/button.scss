@@ -1,7 +1,7 @@
 @import "./mixin.scss";
 @import "./variable.scss";
 @import "./function.scss";
-@import "./extend.scss";
+
 // @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
 //
 //
@@ -9,6 +9,27 @@
 //   font-family: 'Hanna', serif !important;
 //   background-color: #f1f1f1;
 // }
+
+.button{
+  border: none;
+  display: inline-block;
+  box-shadow: $button-shadow;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  overflow: hidden;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  @include transition(all 0.2s ease-out);
+  outline: 0;
+  font-family: inherit;
+  font-size: inherit;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
 
 .tw-btn{
   @extend .button;
@@ -36,7 +57,7 @@
   border-radius: $button-radius;
   background-color : transparent;
   &:hover{
-      background: rgba(0,0,0,0.1);
+      background: rgba(0,0,0,0.3);
   }
 }
 

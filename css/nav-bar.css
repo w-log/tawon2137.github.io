@@ -11,31 +11,52 @@
   -o-transition: all 0.2s ease-in;
   -ms-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
-  background: white;
-  z-index: 100; }
+  z-index: 100;
+  user-select: none; }
   .tw-navbar.clear {
-    box-shadow: none;
-    background-color: transparent; }
-  .tw-navbar ul {
-    padding: 0;
-    position: relative;
     top: 0;
-    left: 0; }
+    position: absolute;
+    box-shadow: none;
+    background-color: transparent;
+    color: white; }
+  .tw-navbar ul {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 100%;
+    width: 80%; }
     .tw-navbar ul .right {
       float: right; }
-    .tw-navbar ul .right {
+    .tw-navbar ul .left {
       float: left; }
     .tw-navbar ul li {
       display: block;
-      float: left;
+      float: right;
       position: relative;
-      padding: 0 2rem;
+      padding: 0 1rem;
       text-align: center;
-      background-color: transparent; }
+      background-color: transparent;
+      -webkit-transition: background 0.2s ease-out;
+      -moz-transition: background 0.2s ease-out;
+      -o-transition: background 0.2s ease-out;
+      -ms-transition: background 0.2s ease-out;
+      transition: background 0.2s ease-out;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold; }
+      .tw-navbar ul li a {
+        text-decoration: none;
+        color: inherit; }
+      .tw-navbar ul li.logoTitle {
+        font-size: 2rem; }
+      .tw-navbar ul li:hover {
+        background: rgba(0, 0, 0, 0.3); }
       .tw-navbar ul li a {
         cursor: pointer; }
-        .tw-navbar ul li a:hover {
-          background: rgba(0, 0, 0, 0.1); }
   .tw-navbar .left {
     float: left; }
   .tw-navbar .right {
@@ -50,6 +71,3 @@
     -o-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%); }
-  .tw-navbar .logoTitle {
-    font-size: 2rem;
-    color: black; }

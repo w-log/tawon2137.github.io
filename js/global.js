@@ -12,7 +12,7 @@ if( typeof window.twCom === "undefined"){
       Global.prototype.addClass = function(Ele , ClassName) {
           if(Ele.classList && typeof ClassName === "string"){
               Ele.classList.add(ClassName);
-          }else if (Ele.className && typeof ClassName === "string" ){
+          }else if (typeof Ele.className !== "undefined" && typeof ClassName === "string" ){
               Ele.className += " " + ClassName;
           }else{
               throw new Error("addClass의 인자는 (Element객체,'넣을클래스명') 으로 정의해야합니다.");
@@ -78,7 +78,7 @@ if( typeof window.twCom === "undefined"){
             },
             cssEach : function(cssobj){
               if( typeof cssobj !== "object" ){return false;}
-              
+
                 for (var key in cssobj){
                   if(cssobj.hasOwnProperty(key)){
                       Ele.style[key] = cssobj[key];

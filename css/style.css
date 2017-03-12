@@ -2,7 +2,8 @@
   box-sizing: inherit; }
 
 html {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: 'Iropke Batang', serif; }
 
 body {
   margin: 0; }
@@ -312,3 +313,37 @@ body {
         left: 100%; }
       .row .col.pull-l12 {
         right: 100%; } }
+
+.hide-l {
+  display: none !important; }
+
+.show-l {
+  display: block !important; }
+
+.hide-m {
+  display: block !important; }
+
+.show-m {
+  display: none !important; }
+
+.hide-s {
+  display: block !important; }
+
+.show-s {
+  display: none !important; }
+
+@media only screen and (max-width: 1366px) {
+  .hide-l {
+    display: block !important; }
+  .show-l {
+    display: none !important; }
+  .hide-m {
+    display: none !important; }
+  .show-m {
+    display: block !important; } }
+
+@media only screen and (max-width: 720px) {
+  .hide-s {
+    display: none !important; }
+  .show-s {
+    display: block !important; } }

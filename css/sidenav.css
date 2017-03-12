@@ -5,7 +5,7 @@
   width: 100%;
   height: 120vh;
   z-index: 997;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
   will-change: opacity;
   opacity: 0; }
 
@@ -20,18 +20,18 @@
   #drag-target {
     width: 0px !important; } }
 
-#tw-sideNav {
+.tw-sideNav {
   position: fixed;
-  width: 300px;
+  width: 250px;
   left: 0;
   top: 0;
   margin: 0;
   will-change: transform;
-  -webkit-transform: translateX(-300px);
-  -moz-transform: translateX(-300px);
-  -o-transform: translateX(-300px);
-  -ms-transform: translateX(-300px);
-  transform: translateX(-300px);
+  -webkit-transform: translateX(-250px);
+  -moz-transform: translateX(-250px);
+  -o-transform: translateX(-250px);
+  -ms-transform: translateX(-250px);
+  transform: translateX(-250px);
   height: 100%;
   height: calc(100% + 60px);
   height: -moz-calc(100%);
@@ -39,20 +39,21 @@
   z-index: 999;
   overflow: auto;
   backface-visibility: hidden;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); }
-  #tw-sideNav a {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.34), 0 1px 5px 0 rgba(0, 0, 0, 0.32), 0 3px 1px -2px rgba(0, 0, 0, 0.4); }
+  .tw-sideNav .menu {
     cursor: pointer;
     padding: 0 1rem;
     text-decoration: none;
     height: 40px;
     line-height: 40px;
     display: block;
+    font-weight: bold;
     -webkit-transition: color 0.2s ease-in;
     -moz-transition: color 0.2s ease-in;
     -o-transition: color 0.2s ease-in;
     -ms-transition: color 0.2s ease-in;
     transition: color 0.2s ease-in; }
-  #tw-sideNav #closeNav {
+  .tw-sideNav #closeNav {
     left: 0;
     position: absolute;
     width: 100%;
@@ -60,13 +61,13 @@
     bottom: 60px;
     height: 26px;
     line-height: 26px; }
-  #tw-sideNav .profile {
+  .tw-sideNav .profile {
     font-size: 14px;
     position: relative;
     padding: 2rem 2rem .5rem;
     margin-bottom: 5px;
     color: white; }
-    #tw-sideNav .profile .background {
+    .tw-sideNav .profile .background {
       z-index: -1;
       position: absolute;
       top: 0;
@@ -74,16 +75,16 @@
       bottom: 0;
       left: 0;
       overflow: hidden; }
-    #tw-sideNav .profile .avatar img {
+    .tw-sideNav .profile .avatar img {
       display: block;
       width: 60px;
       height: 60px;
       border-radius: 50%; }
-    #tw-sideNav .profile .name {
+    .tw-sideNav .profile .name {
       padding: 0 .1rem .5rem .1em;
       display: block;
       margin-top: 1em; }
-    #tw-sideNav .profile .title {
+    .tw-sideNav .profile .title {
       display: block;
       font-size: .9em;
       padding-bottom: 1em; }

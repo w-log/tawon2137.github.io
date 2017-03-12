@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Sass와 Native Js 기반의 Css 프레임워크 프로젝트</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/twCom.min.css">
+    <script src="./js/lib/hammer.js"></script>
+    <script src="./js/lib/TweenLite.js"></script>
+
+    <script type="text/javascript" src="./devjs/twCom.min.js"></script>
+    <header>
+      <!-- <div class="tw-navbar fixed-nav clear">
+          <div class="logoTitle center">top nav bar</div>
+          <ul >
+              <li><a>asd</a></li>
+              <li>asd</li>
+              <li>asd</li>
+          </ul>
+      </div> -->
+        <h1>slide Test</h1>
+
+      <div class="slide-container fullscreen" id="topSlide">
+        <div class="slide">
+
+          <img src="/image/slide1.jpg" >
+          <div class="text-container">
+            <div class="title">Caption 1</div>
+            <div class="content">1</div>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img src="/image/slide2.jpg" >
+          <div class="text-container">
+            <div class="title">Caption 2</div>
+            <div class="content">2</div>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img src="/image/slide3.jpg">
+          <div class="text-container">
+            <div class="title">Caption 3</div>
+            <div class="content">3</div>
+          </div>
+        </div>
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+    </div>
+
+    </header>
+    <main>
+      <h1>Card Test</h1>
+    <div class="row">
+      <div id="tw-sideNav" data-width="250">
+          <div class="profile">
+            <div class="background">
+              <img src="http://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory&fname=http%3A%2F%2Fcfile4.uf.tistory.com%2Fimage%2F226CDC3D55D38E2B36FA9A">
+            </div>
+            <span class="name" > Kim tae woong </span>
+            <span class="title" > Kim tae woong Kim tae woong Kim tae woong Kim tae woong Kim tae woong </span>
+          </div>
+          <a class="waves-effect" data-waveColor="red">Services</a>
+          <a class="waves-effect" data-waveColor="black">Clients</a>
+          <a class="waves-effect" data-waveColor="yellow">Contact</a>
+          <a id="closeNav" class="tw-btn-clear waves-effect" data-waveColor="black" data-trigger="close" data-sidenav="tw-sideNav" >닫기<i class="fa fa-sign-out"></i></a>
+      </div>
+
+
+    <div class="col s12 m6 l2">
+      <div class="card">
+        <div class="card-profile" >
+          <img
+           src="/image/backimge2.png" >
+       </div>
+
+         <div class="card-content">
+            <h3>프로필~</h3>
+            <p>javascript full-stack Engineer</p>
+        </div>
+        <div class="card-action">
+            <a href="sss" >링크1</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col col s12 m6 l4">
+    <div class="card">
+       <div class="card-content">
+          <p class="card-title">hi title.</p>
+          Architect & Engineer
+      </div>
+      <div class="card-action">
+          <a href="sss" >링크1</a>
+          <a href="sss" >링크2</a>
+          <a href="sss" >링크3</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 m12 l6">
+  <div class="card sidetemple">
+     <div class="sideimg">
+       <img src="/image/images.jpg" >
+    </div>
+  <div class="side-content">
+    <div class="card-content">
+      <p class="card-title">hi title.</p>
+      Architect & Engineer
+    </div>
+    <div class="card-action">
+      <a href="sss" >링크1</a>
+      <a class="tw-btn">button</a>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+
+  </div>
+
+
+
+  <hr>
+
+
+  <h1>sideNav Test</h1>
+  <div class="row">
+      <button id="openNav" class="col s12 tw-btn waves-effect red-l-3 white-text" data-waveColor="black"  data-sidenav="tw-sideNav" data-trigger="open">open nav</button>
+  </div>
+
+
+  <h1>Button and Waves Effect Test</h1>
+<div class="row">
+  <div class="col s10">
+      <a class="tw-btn-large waves-effect" data-waveColor="yellow2" >button</a>
+
+      <a class="tw-btn-Round  waves-effect" data-waveColor="black"><i class="fa fa-plus"></i></a>
+
+      <a class="tw-btn waves-effect" data-waveColor="red"><i class="fa fa-search"></i>button</a>
+
+      <a class="tw-btn waves-effect" data-waveColor="green">button!</a>
+
+      <a class="tw-btn-clear waves-effect"  data-waveColor="black" disabled>clear Button</a>
+
+      <button class="tw-btn">button!!!!!!!!!!!!!</button>
+    </div>
+</div>
+
+
+<hr>
+
+
+
+
+
+
+<h1>form Test</h1>
+<div class="row">
+  <form method="GET" action="/asd">
+    <div class="col s6 m6 l12">
+      <select class="blue-a-3-text" id="myselect" name="myselected">
+        <option value="" selected>option1 selected</option>
+        <option value="option2">option2</option>
+        <option value="option3" disabled>option3 disabled</option>
+        <option value="option4">option4</option>
+
+      </select>
+    </div>
+
+  <div class="col s6">
+      <div class="tw-input-field">
+        <input type="search" placeholder="검색"  name="id">
+        <hr class="focusline">
+        <hr class="bottomline">
+      </div>
+  </div>
+
+
+
+  <div class="col s6">
+      <div class="tw-input-field waves-effect"  data-waveColor="yellow2">
+        <input type="text" placeholder="텍스트" class="asdasd" name="pwd">
+        <hr class="focusline">
+        <hr class="bottomline">
+      </div>
+  </div>
+
+
+
+
+  <button type="submit" class="col s12 tw-btn waves-effect" waves-color="col-black">submit Button</button>
+</form>
+
+</div>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>Modal Test</h1>
+<div class="row">
+  <button class="col s6 tw-btn openModal" data-target="logmodal">open logModal</button>
+  <div id="logmodal" class="modal">
+    <div class="modal-content row">
+
+      <div class="tw-input-field">
+        <input type="text" placeholder="ID" class="asdasd" >
+        <hr class="focusline">
+        <hr class="bottomline">
+      </div>
+
+      <div class="tw-input-field ">
+        <input type="text" placeholder="Password" class="asdasd" >
+        <hr class="focusline">
+        <hr class="bottomline">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a class="tw-btn-clear waves-effect">닫기</a>
+    </div>
+  </div>
+
+
+
+    <button class="col s6 tw-btn openModal" data-target="logmodal2">open Modal2</button>
+    <div id="logmodal2" class="modal">
+      <div class="modal-content row">
+
+        <div class="tw-input-field">
+          <input type="text" placeholder="ID" class="asdasd" >
+          <hr class="focusline">
+          <hr class="bottomline">
+        </div>
+
+        <div class="tw-input-field ">
+          <input type="text" placeholder="Password" class="asdasd" >
+          <hr class="focusline">
+          <hr class="bottomline">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="tw-btn-clear waves-effect closeModal" >닫기</a>
+      </div>
+    </div>
+</div>
+
+<hr>
+
+<div id="drag-target" data-sidenav="tw-sideNav" data-trigger="close" ></div>
+</main>
+
+  </body>
+</html>
