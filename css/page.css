@@ -85,13 +85,16 @@ footer {
       footer .footer-content .content-text .gitUrl {
         text-decoration: underline;
         padding-top: 0.2rem;
-        font-size: 0.5rem;
+        font-size: 0.8rem;
         cursor: pointer; }
 
 main {
   position: relative;
   width: 100%;
-  height: 100vh; }
+  height: 300vh; }
+  main .main-content {
+    position: relative;
+    height: 100vh; }
 
 #scroll-down {
   position: absolute;
@@ -117,6 +120,12 @@ main {
     -ms-animation: none;
     -o-animation: none;
     animation: none; }
+
+.fixed {
+  position: fixed !important; }
+
+.push-pin {
+  position: relative !important; }
 
 .right {
   float: right !important; }

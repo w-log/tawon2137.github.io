@@ -1,0 +1,98 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "node-waves",
+        "scope": null,
+        "escapedName": "node-waves",
+        "name": "node-waves",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Nodework\\SassFramework"
+    ]
+  ],
+  "_from": "node-waves@latest",
+  "_id": "node-waves@0.7.5",
+  "_inCache": true,
+  "_location": "/node-waves",
+  "_nodeVersion": "4.2.1",
+  "_npmOperationalInternal": {
+    "host": "packages-5-east.internal.npmjs.com",
+    "tmp": "tmp/node-waves-0.7.5.tgz_1456056834968_0.3701883570756763"
+  },
+  "_npmUser": {
+    "name": "fian",
+    "email": "alfian.sibuea@gmail.com"
+  },
+  "_npmVersion": "2.14.7",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "node-waves",
+    "scope": null,
+    "escapedName": "node-waves",
+    "name": "node-waves",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/node-waves/-/node-waves-0.7.5.tgz",
+  "_shasum": "be15bccc685544cb9e68c8f922b57fb802d95cff",
+  "_shrinkwrap": null,
+  "_spec": "node-waves",
+  "_where": "C:\\Nodework\\SassFramework",
+  "author": {
+    "name": "Alfiana E. Sibuea",
+    "email": "alfian.sibuea@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/fians/Waves/issues"
+  },
+  "dependencies": {},
+  "description": "Click effect insipired by Google Material Design",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-less": "^0.12.0",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-stylus": "^0.20.0",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-execute": "^0.2.2",
+    "grunt-sass-convert": "^0.2.0",
+    "less2stylus": "^0.1.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "be15bccc685544cb9e68c8f922b57fb802d95cff",
+    "tarball": "https://registry.npmjs.org/node-waves/-/node-waves-0.7.5.tgz"
+  },
+  "gitHead": "5ce37da75c9e1c41b0344afd4a8dd6eea92424e7",
+  "homepage": "http://fian.my.id/Waves",
+  "license": "MIT",
+  "main": "src/js/waves.js",
+  "maintainers": [
+    {
+      "name": "fian",
+      "email": "alfian.sibuea@gmail.com"
+    }
+  ],
+  "name": "node-waves",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fians/Waves.git"
+  },
+  "scripts": {
+    "test": ""
+  },
+  "version": "0.7.5"
+}

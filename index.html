@@ -9,6 +9,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/twCom.min.css">
     <link rel="stylesheet" href="./css/page.css">
+
+   <style>
+       html, body, .block {
+        height: 100%;
+      }
+      /*nav ul li a:hover, nav ul li a.active {
+        background-color: rgba(0,0,0,.1);
+      }*/
+      footer {
+        padding-left: 0;
+      }
+   </style>
   </head>
   <body>
     <header>
@@ -25,7 +37,8 @@
         <div class="slide">
           <img src="/image/code.png">
           <div class="text-container">
-            <div class="title">Js 기반의 full-stack 예비개발자 개인페이지 템플릿 Test</div>
+            <div class="title">Js 기반의 full-stack 예비개발자<br>
+               개인페이지 템플릿 Test</div>
             <div class="content">타이틀 아래에 Content</div>
           </div>
         </div>
@@ -70,6 +83,27 @@
     </header>
     <main>
       <!-- 중간 -->
+      <div id="skill" class="main-content indigo">
+        <div class="tw-navbar fixed-nav white-text">
+            <ul>
+                <li class="logoTitle left not-cursor"><i class="fa fa-wrench" aria-hidden="true"></i>&nbsp;개발스킬</a></li>
+            </ul>
+        </div>
+      </div>
+      <div id="introduction" class="main-content red">
+        <div class="tw-navbar fixed-nav white-text">
+            <ul>
+                <li class="logoTitle left not-cursor"><i class="fa fa-smile-o" aria-hidden="true"></i></i>&nbsp;자기소개</a></li>
+            </ul>
+        </div>
+      </div>
+      <div id="resume" class="main-content pink">
+        <div class="tw-navbar fixed-nav white-text">
+            <ul>
+                <li class="logoTitle left not-cursor"><i class="fa fa-id-card-o" aria-hidden="true"></i>&nbsp;이력</a></li>
+            </ul>
+        </div>
+      </div>
     </main>
     <footer class="black">
       <!-- 아래 -->
@@ -89,8 +123,5 @@
     <script type="text/javascript" src="./devjs/lib/TweenLite.js"></script>
     <script type="text/javascript" src="./devjs/twCom.min.js"></script>
     <script type="text/javascript" src="./devjs/scroll.js"></script>
-    <script>
-
-    </script>
   </body>
 </html>
