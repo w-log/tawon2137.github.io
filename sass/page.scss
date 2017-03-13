@@ -1,3 +1,6 @@
+@import "./mixin.scss";
+@import "./function.scss";
+
 #aboutModal{
     width: 300px;
     color:white;
@@ -10,6 +13,47 @@
     font-size: 1.3rem;
     font-weight: bold;
 }
+.button-group{
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 5vh;
+  bottom: 1rem;
+}
+
+.footer-button-group{
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  bottom: 1rem;
+  bottom: 0;
+}
+
+.view-icon{
+  position: relative;
+  z-index: 3;
+  top : 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  font-size: 2rem;
+  padding: 0 1rem;
+  height: 3rem;
+  margin-left : 1rem;
+  line-height: 3rem;
+  text-align: center;
+  font-weight: bold;
+  margin: auto auto;
+  &:hover{
+    background: transparent;
+    transform: scale(1.2);
+  }
+  &.fb-icon{
+    color:#5C6BC0;
+  }
+}
+
 
 #aboutModal .profile > img{
   width: 80px;
@@ -22,17 +66,47 @@
 }
 
 #myside-nav{
-  color : black;
+  background: #9E9E9E;
+  & .menu{
+    
+  }
 }
 footer{
-  border-top: 1px solid rgba(0,0,0,0.3);
-  padding: 0 auto;
   height: 100px;
   position: relative;
-  width: 95%;
-  margin: 0 auto;
+  width: 100%;
   bottom: 0;
+  background: white;
+  & .footer-content{
+    position: absolute;
+    border-top: 1px solid rgba(0,0,0,0.3);
+    width: 90%;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    padding-top: 0.5rem;
+    & .content-text{
+      position: absolute;
+      top: 0;
+      height: 50%;
+      text-align: center;
+      left: 0;
+      right: 0;
+      font-size : 0.9rem;
+      font-weight: bold;
+      margin-top: .5rem;
+      & .gitUrl{
+        text-decoration: underline;
+        padding-top: 0.2rem;
+        font-size : 0.5rem;
+        cursor: pointer;
+      }
+    }
+  }
 }
+
 
 main {
   position: relative;
@@ -40,9 +114,10 @@ main {
   height: 100vh;
 }
 
+
 #scroll-down{
   position: absolute;
-  display: none;
+  display: block;
   bottom: 1rem;
   color: white;
   font-size: 3rem;
@@ -53,12 +128,57 @@ main {
   left : 0;
   right: 0;
   margin: 0 auto;
+  @include animate("triggerMove 0.75s infinite");
   &:hover{
-    bottom: 0;
+    @include animate("none");
   }
 }
-@media only screen and (min-width : 1366px) {
-  #scroll-down{
-    display: block;
-  }
+
+
+
+
+.right{
+    float:right !important;
 }
+.left{
+    float:left !important;
+}
+
+@media only screen and (max-width : 1366px) {
+  .view-icon{
+    font-size: 1.7rem;
+    margin-left: 0;
+    padding: 0 0.8rem;
+  }
+  // footer{
+  //   height: 80px;
+  // }
+}
+
+
+
+@media only screen and (max-width : 720px) {
+    #scroll-down{
+      display: none;
+    }
+   .view-icon{
+     font-size: 1.4rem;
+     margin-left: 0;
+     padding: 0 0.5rem;
+   }
+
+   .button-group, .footer-button-group{
+     text-align: center;
+   }
+
+
+  //  footer{
+  //    height: 60px;
+  //  }
+ }
+
+
+
+
+
+ @include keyframesubfix("triggerMove","{50% {transform : translateY(-5px);}, 100%{transform : translateY(0px);}}");

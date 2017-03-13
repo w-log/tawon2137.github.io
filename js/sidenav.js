@@ -318,8 +318,6 @@
         }else{
             document.body.addEventListener('click', triggerCheck, false);
         }
-
-        var drag_element = document.getElementById("drag-target");
-
+        createdragTarget(document.getElementById("myside-nav"));
     });
 })();

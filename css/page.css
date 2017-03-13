@@ -9,6 +9,42 @@
   font-size: 1.3rem;
   font-weight: bold; }
 
+.button-group {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 5vh;
+  bottom: 1rem; }
+
+.footer-button-group {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  bottom: 1rem;
+  bottom: 0; }
+
+.view-icon {
+  position: relative;
+  z-index: 3;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  font-size: 2rem;
+  padding: 0 1rem;
+  height: 3rem;
+  margin-left: 1rem;
+  line-height: 3rem;
+  text-align: center;
+  font-weight: bold;
+  margin: auto auto; }
+  .view-icon:hover {
+    background: transparent;
+    transform: scale(1.2); }
+  .view-icon.fb-icon {
+    color: #5C6BC0; }
+
 #aboutModal .profile > img {
   width: 80px;
   height: 80px;
@@ -18,16 +54,39 @@
   border-top: 1px solid rgba(255, 255, 255, 0.3); }
 
 #myside-nav {
-  color: black; }
+  background: #9E9E9E; }
 
 footer {
-  border-top: 1px solid rgba(0, 0, 0, 0.3);
-  padding: 0 auto;
   height: 100px;
   position: relative;
-  width: 95%;
-  margin: 0 auto;
-  bottom: 0; }
+  width: 100%;
+  bottom: 0;
+  background: white; }
+  footer .footer-content {
+    position: absolute;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    width: 90%;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    padding-top: 0.5rem; }
+    footer .footer-content .content-text {
+      position: absolute;
+      top: 0;
+      height: 50%;
+      text-align: center;
+      left: 0;
+      right: 0;
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin-top: .5rem; }
+      footer .footer-content .content-text .gitUrl {
+        text-decoration: underline;
+        padding-top: 0.2rem;
+        font-size: 0.5rem;
+        cursor: pointer; }
 
 main {
   position: relative;
@@ -36,7 +95,7 @@ main {
 
 #scroll-down {
   position: absolute;
-  display: none;
+  display: block;
   bottom: 1rem;
   color: white;
   font-size: 3rem;
@@ -46,10 +105,43 @@ main {
   width: 200px;
   left: 0;
   right: 0;
-  margin: 0 auto; }
+  margin: 0 auto;
+  -webkit-animation: triggerMove 0.75s infinite;
+  -moz-animation: triggerMove 0.75s infinite;
+  -ms-animation: triggerMove 0.75s infinite;
+  -o-animation: triggerMove 0.75s infinite;
+  animation: triggerMove 0.75s infinite; }
   #scroll-down:hover {
-    bottom: 0; }
+    -webkit-animation: none;
+    -moz-animation: none;
+    -ms-animation: none;
+    -o-animation: none;
+    animation: none; }
 
-@media only screen and (min-width: 1366px) {
+.right {
+  float: right !important; }
+
+.left {
+  float: left !important; }
+
+@media only screen and (max-width: 1366px) {
+  .view-icon {
+    font-size: 1.7rem;
+    margin-left: 0;
+    padding: 0 0.8rem; } }
+
+@media only screen and (max-width: 720px) {
   #scroll-down {
-    display: block; } }
+    display: none; }
+  .view-icon {
+    font-size: 1.4rem;
+    margin-left: 0;
+    padding: 0 0.5rem; }
+  .button-group, .footer-button-group {
+    text-align: center; } }
+
+@-webkit-keyframes triggerMove {50% {transform : translateY(-5px);}, 100%{transform : translateY(0px);}}
+  @-moz-keyframes triggerMove {50% {transform : translateY(-5px);}, 100%{transform : translateY(0px);}}
+  @-o-keyframes triggerMove {50% {transform : translateY(-5px);}, 100%{transform : translateY(0px);}}
+  @-ms-keyframes triggerMove {50% {transform : translateY(-5px);}, 100%{transform : translateY(0px);}}
+  @keyframes triggerMove {50% {transform : translateY(-5px);}, 100%{transform : translateY(0px);}};

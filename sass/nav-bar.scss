@@ -77,3 +77,18 @@
           @include transform(translateX(-50%));
       }
   }
+
+  @media only screen and (max-width : 1366px) {
+    .tw-navbar{
+      & ul{
+        width: 90%;
+      }
+    }
+  }
+  @media only screen and (max-width : 720px) {
+    .tw-navbar{
+      & ul{
+        width: 95%;
+      }
+    }
+  }
