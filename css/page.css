@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #aboutModal {
   width: 300px;
   color: white;
@@ -96,9 +97,35 @@ main {
     position: relative;
     height: 100vh; }
 
+.content-card {
+  position: absolute;
+  width: 70%;
+  top: 60px;
+  right: 0;
+  left: 0;
+  height: 100%;
+  margin-top: 3rem;
+  font-size: 2rem;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -moz-transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -ms-transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); }
+  .content-card .card-content {
+    margin-bottom: 8rem; }
+    .content-card .card-content img {
+      width: 40%; }
+    .content-card .card-content .card-text {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 0.5rem; }
+  .content-card.show {
+    opacity: 1; }
+
 #scroll-down {
   position: absolute;
-  display: block;
   bottom: 1rem;
   color: white;
   font-size: 3rem;
@@ -109,17 +136,44 @@ main {
   left: 0;
   right: 0;
   margin: 0 auto;
+  z-index: 1;
   -webkit-animation: triggerMove 0.75s infinite;
   -moz-animation: triggerMove 0.75s infinite;
   -ms-animation: triggerMove 0.75s infinite;
   -o-animation: triggerMove 0.75s infinite;
-  animation: triggerMove 0.75s infinite; }
+  animation: triggerMove 0.75s infinite;
+  overflow: visible; }
+  #scroll-down::after {
+    content: "아래로 이동";
+    position: absolute;
+    font-size: 1rem;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    width: 12rem;
+    padding: 0 1rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transform: translateY(-60px);
+    z-index: 100;
+    opacity: 1;
+    pointer-events: none;
+    -webkit-transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);;
+    -moz-transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);;
+    -o-transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);;
+    -ms-transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);; }
   #scroll-down:hover {
     -webkit-animation: none;
     -moz-animation: none;
     -ms-animation: none;
     -o-animation: none;
     animation: none; }
+    #scroll-down:hover::after {
+      opacity: 0;
+      transform: translateY(-30px); }
 
 .fixed {
   position: fixed !important; }
@@ -137,7 +191,10 @@ main {
   .view-icon {
     font-size: 1.7rem;
     margin-left: 0;
-    padding: 0 0.8rem; } }
+    padding: 0 0.8rem; }
+  .content-card {
+    width: 90%;
+    font-size: 1.5rem; } }
 
 @media only screen and (max-width: 720px) {
   #scroll-down {
@@ -147,7 +204,12 @@ main {
     margin-left: 0;
     padding: 0 0.5rem; }
   .button-group, .footer-button-group {
-    text-align: center; } }
+    text-align: center; }
+  .content-card {
+    width: 100%;
+    font-size: 1rem; }
+    .content-card .card-content {
+      margin-bottom: 6rem; } }
 
 @-webkit-keyframes triggerMove {50% {transform : translateY(-5px);}, 100%{transform : translateY(0px);}}
   @-moz-keyframes triggerMove {50% {transform : translateY(-5px);}, 100%{transform : translateY(0px);}}

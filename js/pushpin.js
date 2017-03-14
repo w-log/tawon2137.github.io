@@ -37,8 +37,9 @@ var pushpin = function(){
     // 함수는 수행이 끝나면 소멸되지만 클로저의 참조하는 특성으로 인해서 내부함수가 완료될떄까지 외부함스의 변수들은 소멸되지 않는다.
     var y =  position();
     //for 문 내부에서 사용할 변수들을 선언함
-    var navElement, offsetTop, top, element_css, markCheck;
+    var navElement, offsetTop, top, element_css, markCheck, content;
     for (var i = 0; i < pushZones.length; i++ ){
+          content = pushZones[i].querySelector(".content-card");
           //pushZones 배열을 참조하여 for문을 돌리고 하위엘리먼트인 tw-navbar 라는 클래스를 가져와 변수에 담는다.
           navElement = pushZones[i].querySelector(".tw-navbar[data-pin=" + pushZones[i].getAttribute("id") +"]" );
           //header의 height크기 + i 번쨰 엘리먼트의 offsetTop 값을 더 하면 페이지내에서 i번쨰 엘리먼트 페이지내에서 절대위치가 나온다.
@@ -55,7 +56,8 @@ var pushpin = function(){
           */
           if ( top > 0 ){
              element_css.setCss("top", "0px" );
-             twCom.fn.hasClass(navElement, "fixed") ? twCom.fn.removeClass(navElement, "fixed") : '';
+             twCom.fn.hasClass(navElement, "fixed") ? twCom.fn.removeClass(navElement, "fixed") : '' ;
+             twCom.fn.hasClass(content, "show") ? twCom.fn.removeClass(content , "show") : '' ;
              twCom.fn.addClass(navElement,"push-pin");
            }
 
@@ -67,6 +69,7 @@ var pushpin = function(){
            */
           if ( top <= 0 && markCheck > 0 ){
               element_css.setCss("top", "0px" );
+              twCom.fn.addClass(content, "show");
               twCom.fn.hasClass(navElement, "push-pin") ? twCom.fn.removeClass(navElement, "push-pin") : '';
               twCom.fn.addClass(navElement,"fixed");
           }
@@ -87,6 +90,8 @@ var pushpin = function(){
 
       }
     };
+
+    scrollPush();
   window.addEventListener("scroll", function(e){
     requestAnimFrame(scrollPush);
   });

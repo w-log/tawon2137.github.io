@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/twCom.min.css">
     <link rel="stylesheet" href="./css/page.css">
-
    <style>
        html, body, .block {
         height: 100%;
@@ -25,11 +24,11 @@
   <body>
     <header>
       <!-- 헤더 -->
-      <div class="tw-navbar fixed-nav clear">
+      <div class="tw-navbar fixed-nav clear"  >
           <ul >
               <li class="logoTitle left"><a href="/"><i class="fa fa-star-half-o" aria-hidden="true"></i>&nbsp;Full-stack-dev</a></li>
-              <li class="waves-effect show-m white-text" data-sidenav="myside-nav" data-trigger="open" ><i class="fa fa-bars" aria-hidden="true"></i></li>
-              <li class="waves-effect hide-m openModal" data-target="aboutModal">about</li>
+              <!-- <li class="waves-effect show-m white-text" data-sidenav="myside-nav" data-trigger="open" ><i class="fa fa-bars" aria-hidden="true"></i></li> -->
+              <li class="waves-effect openModal" data-target="aboutModal">about</li>
           </ul>
       </div>
       <div class="slide-container fullscreen" id="topSlide">
@@ -42,7 +41,7 @@
             <div class="content">타이틀 아래에 Content</div>
           </div>
         </div>
-        <button id="scroll-down" class="tw-btn-clear waves-effect" data-waveColor="white"><i class="fa fa-angle-double-down" aria-hidden="true"></i></button>
+        <button id="scroll-down" class="tw-btn-clear" ><i class="fa fa-angle-double-down" aria-hidden="true"></i></button>
         <div class="button-group bottom">
           <a class="tw-btn-clear waves-effect view-icon white-text"  onclick="javascript:window.open('https://github.com/tawon2137')" ><i class="fa fa-github"></i></a>
           <a class="tw-btn-clear waves-effect view-icon indigo-text " ><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
@@ -67,6 +66,7 @@
           <div class="background">
             <img src="./image/profile1.jpg">
           </div>
+
           <!-- <div class="avatar">
               <img src="./image/myprofile.png" >
           </div> -->
@@ -84,25 +84,83 @@
     <main>
       <!-- 중간 -->
       <div id="skill" class="main-content indigo">
-        <div class="tw-navbar fixed-nav white-text">
+
+        <div class="tw-navbar fixed-nav white-text indigo">
             <ul>
                 <li class="logoTitle left not-cursor"><i class="fa fa-wrench" aria-hidden="true"></i>&nbsp;개발스킬</a></li>
             </ul>
         </div>
+
+      <div class="content-card row">
+
+
+          <div class="card-content col s6 l4">
+            <img src="./image/skill1.png">
+            <div class="card-text white-text col s12">
+                HTML
+            </div>
+          </div>
+          <div class="card-content col s6 l4">
+            <img src="./image/skill2.png" style="border-radius: 15px" >
+            <div class="card-text white-text">
+              javascript(ES5)
+            </div>
+          </div>
+          <div class="card-content col s6 l4">
+            <img src="./image/skill3.svg" >
+            <div class="card-text white-text">
+              CSS
+            </div>
+          </div>
+
+
+
+
+          <div class="card-content col s6 l4">
+            <img src="./image/skill4.png" >
+            <div class="card-text white-text">
+              node.js
+            </div>
+          </div>
+          <div class="card-content col s6 l4">
+            <img src="./image/skill5.png" style="border-radius: 15px" >
+            <div class="card-text white-text">
+              SASS
+            </div>
+          </div>
+
+
+      </div>
+
       </div>
       <div id="introduction" class="main-content red">
-        <div class="tw-navbar fixed-nav white-text">
+
+        <div class="tw-navbar fixed-nav white-text red">
             <ul>
                 <li class="logoTitle left not-cursor"><i class="fa fa-smile-o" aria-hidden="true"></i></i>&nbsp;자기소개</a></li>
             </ul>
         </div>
+
+        <div class="content-card">
+
+    
+        </div>
+
       </div>
       <div id="resume" class="main-content pink">
-        <div class="tw-navbar fixed-nav white-text">
+
+        <div class="tw-navbar fixed-nav white-text pink">
             <ul>
                 <li class="logoTitle left not-cursor"><i class="fa fa-id-card-o" aria-hidden="true"></i>&nbsp;이력</a></li>
             </ul>
         </div>
+
+        <div class="content-card">
+
+
+
+        </div>
+
       </div>
     </main>
     <footer class="black">

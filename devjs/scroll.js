@@ -42,7 +42,7 @@
     change = to - start,
     currentTime = 0,
     increment = 1000 / 60;
-    duration = (typeof(duration) === 'undefined') ? 750 : duration; //anmation time
+    duration = (typeof(duration) === 'undefined') ? 3000 : duration; //anmation time
   //animate 진행 requireAnimation을 통한 호출로 인한 60프레임이 보장됨
   var animateScroll = function() {
     // 애니메이션 시간누적 1프레임당 10이 누적됨
@@ -62,13 +62,14 @@
   };
   animateScroll();
   }
+
   window.addEventListener("DOMContentLoaded", function(e){
     var scrollDownElement = document.getElementById("scroll-down");
     scrollDownElement.addEventListener("click", function(e){
       //scroll down trigger 실행시
-      scrollTo(document.getElementsByTagName("main")[0].offsetTop,undefined,600);
+      scrollTo(document.getElementsByTagName("main")[0].offsetTop,undefined,1500);
    });
-
+   
    window.addEventListener("scroll", function(e){
     //  if ( this.scrollY === 0 ){ return false; }
       var header = document.getElementsByTagName("header")[0];
@@ -88,6 +89,5 @@
       content_css.setCss("transition-duration" , duration + "ms");
       content_css.setCss("opacity", opacity);
    });
-
 });
 })();

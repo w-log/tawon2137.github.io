@@ -107,7 +107,6 @@ footer{
   }
 }
 
-
 main {
   position: relative;
   width: 100%;
@@ -119,9 +118,37 @@ main {
 }
 
 
+.content-card{
+  position: absolute;
+  width: 70%;
+  top : 60px;
+  right: 0;
+  left : 0;
+  height: 100%;
+  margin-top: 3rem;
+  font-size : 2rem;
+  text-align: center;
+  opacity: 0;
+  @include transition("opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)");
+    & .card-content{
+      margin-bottom: 8rem;
+      & img{
+        width: 40%;
+      }
+      & .card-text{
+        text-align: center;
+        font-weight: bold;
+        margin-top : 0.5rem;
+      }
+    }
+
+
+  &.show {
+    opacity: 1;
+  }
+}
 #scroll-down{
   position: absolute;
-  display: block;
   bottom: 1rem;
   color: white;
   font-size: 3rem;
@@ -132,9 +159,34 @@ main {
   left : 0;
   right: 0;
   margin: 0 auto;
+  z-index: 1;
   @include animate("triggerMove 0.75s infinite");
+  overflow: visible;
+  &::after{
+    content: "아래로 이동";
+    position: absolute;
+    font-size: 1rem;
+    background: rgba(0,0,0,.8);
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    width: 12rem;
+    padding: 0 1rem;
+    left : 0;
+    right: 0;
+    margin: 0 auto;
+    transform: translateY(-60px);
+    z-index: 100;
+    opacity: 1;
+    pointer-events: none;
+    @include transition("transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);");
+  }
   &:hover{
     @include animate("none");
+    &::after{
+      opacity: 0;
+      transform: translateY(-30px);
+    }
   }
 }
 
@@ -159,9 +211,10 @@ main {
     margin-left: 0;
     padding: 0 0.8rem;
   }
-  // footer{
-  //   height: 80px;
-  // }
+  .content-card{
+      width: 90%;
+      font-size : 1.5rem;
+  }
 }
 
 
@@ -180,10 +233,13 @@ main {
      text-align: center;
    }
 
-
-  //  footer{
-  //    height: 60px;
-  //  }
+   .content-card{
+       width: 100%;
+       font-size : 1rem;
+       & .card-content{
+         margin-bottom: 6rem;
+       }
+   }
  }
 
 
