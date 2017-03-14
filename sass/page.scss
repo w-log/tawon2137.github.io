@@ -72,7 +72,7 @@
   }
 }
 footer{
-  height: 100px;
+  height: 20vh;
   position: relative;
   width: 100%;
   bottom: 0;
@@ -110,10 +110,13 @@ footer{
 main {
   position: relative;
   width: 100%;
-  height: 300vh;
+  height: 280vh;
   & .main-content{
     position: relative;
     height: 100vh;
+    &.last-content{
+      height: 80vh;
+    }
   }
 }
 
@@ -125,19 +128,19 @@ main {
   right: 0;
   left : 0;
   height: 100%;
-  margin-top: 3rem;
-  font-size : 2rem;
+  margin-top: 2rem;
+  font-size : 1.7rem;
   text-align: center;
   opacity: 0;
   @include transition("opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)");
     & .card-content{
-      margin-bottom: 8rem;
+      margin-bottom: 2rem;
       & img{
         width: 40%;
       }
       & .card-text{
         text-align: center;
-        font-weight: bold;
+        font-weight: 800;
         margin-top : 0.5rem;
       }
     }
@@ -147,7 +150,7 @@ main {
     opacity: 1;
   }
 }
-#scroll-down{
+.scroll-down-trigger{
   position: absolute;
   bottom: 1rem;
   color: white;
@@ -191,6 +194,50 @@ main {
 }
 
 
+.scroll-up-trigger{
+  position: absolute;
+  bottom: 3rem;
+  color: white;
+  font-size: 3rem;
+  padding: 0 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  width: 200px;
+  left : 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 1;
+  @include animate("triggerMove 0.75s infinite");
+  overflow: visible;
+  &::after{
+    content: "맨위로  이동";
+    position: absolute;
+    font-size: 1rem;
+    background: rgba(0,0,0,.8);
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    width: 12rem;
+    padding: 0 1rem;
+    left : 0;
+    right: 0;
+    margin: 0 auto;
+    transform: translateY(40px);
+    z-index: 100;
+    opacity: 1;
+    pointer-events: none;
+    @include transition("transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);");
+  }
+  &:hover{
+    @include animate("none");
+    &::after{
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }
+}
+
+
 
 .fixed{
   position: fixed !important;
@@ -220,7 +267,7 @@ main {
 
 
 @media only screen and (max-width : 720px) {
-    #scroll-down{
+    .scroll-down-trigger, .scroll-up-trigger{
       display: none;
     }
    .view-icon{
@@ -235,9 +282,9 @@ main {
 
    .content-card{
        width: 100%;
-       font-size : 1rem;
+       font-size : 1.1rem;
        & .card-content{
-         margin-bottom: 6rem;
+         margin-bottom: 2rem;
        }
    }
  }
