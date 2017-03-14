@@ -105,4 +105,5 @@
         content_css.setCss("opacity", opacity);
      });
   });
+
 })();
