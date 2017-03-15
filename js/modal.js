@@ -104,6 +104,7 @@
           var modalOption = modal.Option;
           TweenLite.to( shadowElement, modalOption.delay, { opacity : modalOption.shadow_opacity } );
           TweenLite.to( modalElement, modalOption.delay, modalOption.openOption);
+          document.body.style.overflow = "hidden";
         }else{
           throw new Error("Error Modal Open Error");
         }
@@ -122,7 +123,6 @@
           var shadowElement = modal.shadowEle;
           var modalOption = modal.Option;
 
-
           TweenLite.to( shadowElement, modalOption.delay, {
             opacity : 0,
             onComplete: function(){
@@ -132,6 +132,7 @@
             }
         });
           TweenLite.to(modalElement, modalOption.delay, modalOption.closeOption);
+          document.body.style.overflow = "";
       }else{
         throw new Error("Error Modal Close Error");
       }

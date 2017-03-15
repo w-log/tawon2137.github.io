@@ -2,10 +2,10 @@
 @import "./function.scss";
 
 #aboutModal{
-    width: 300px;
-    color:white;
+    width: 700px;
     background-color: rgba(0,0,0,0.7);
     text-align: center;
+    font-weight: 700;
 }
 
 #aboutModal .title{
@@ -267,6 +267,9 @@ main {
 
 
 @media only screen and (max-width : 720px) {
+    #aboutModal{
+      width: 300px
+    }
     .scroll-down-trigger, .scroll-up-trigger{
       display: none;
     }

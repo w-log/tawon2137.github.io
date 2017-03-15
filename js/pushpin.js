@@ -17,8 +17,7 @@ var pushpin = function(){
   pushZones에 첫번쨰 인덱스 clientHeight값과 첫번쨰인덱스 엘리먼트 하위에서 tw-navbar라는 엘리먼트의 clientHeight 를 담는다.
   navbarClientHeight , zoneClientHeight 변수에 담는다. 여기서 pushZones배열에 엘리먼트 크기값은 모두 같기때문에 몇번쨰인덱스를 가져오든 상관없다.
   */
-  var navbarClientHeight = pushZones[0].querySelector(".tw-navbar").clientHeight,
-  zoneClientHeight = pushZones[0].clientHeight;
+  var navbarClientHeight = pushZones[0].querySelector(".tw-navbar").clientHeight;
 
   /*
   브라우저가 requestAnimationFrame 함수를 지원하지않을시에 대응하는코드이다.
@@ -48,7 +47,7 @@ var pushpin = function(){
           element_css = twCom.fn.cssObject(navElement);
           // 절대위치 offset값에서 현재스크롤 Y의 값을 빼면 현재 위치와 엘리먼트사이에 간격이나오며 그 값을 top이라는 변수에 담는다.
           top = offsetTop - y;
-          markCheck = top + zoneClientHeight - navbarClientHeight;
+          markCheck = top + pushZones[i].clientHeight - navbarClientHeight;
           /*
           top을 비교한다 현재 스크롤위치가 대상엘리먼트를 지나치지않은상태의 조건문이며
           절대위치에서 현재스크롤Y값을 뻇을때 그값이 0보다 크다는건 현재 위치가 해당엘리먼트보다 위에 있다는걸 의미하며
@@ -100,7 +99,4 @@ var pushpin = function(){
 
 window.addEventListener("DOMContentLoaded", function(e){
   pushpin();
-  window.addEventListener("scroll", function(e){
-
-  });
 });
