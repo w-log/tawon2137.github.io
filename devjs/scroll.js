@@ -1,6 +1,11 @@
 (function(){
 
 // easing 함수 주소 : http://goo.gl/5HLl8
+    Math.easeOut = function(t, b, c, d) {
+    	var ts=(t/=d)*t;
+    	var tc=ts*t;
+    	return b+c*(0.899999999999998*tc*ts + -4.35*ts*ts + 8.6*tc + -8.7*ts + 4.55*t);
+    }
     Math.easeInOutQuad = function (t, b, c, d) {
       t /= d/2;
       if (t < 1) {
@@ -48,7 +53,7 @@
     // 애니메이션 시간누적 1프레임당 1000ms에서 60으로 나눈값이 누적됨 ( 1000 / 60 === 1초당 60프레임 )
     currentTime += increment;
     // easing 함수 호출
-    var val = Math.easeInOutQuad(currentTime, start, change, duration);
+    var val = Math.easeOut(currentTime, start, change, duration);
     // move 함수 호출
     move(val);
     // 현재 애니메이션 시간이 druation을 초과했는지 확인 현재시간이 < 애니메이션 시간보다 작으면 애니메이션 진행 초과시에는 콜백함수 호출
