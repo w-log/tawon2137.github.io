@@ -72,7 +72,7 @@
           twCom.fn.hasClass(self,"valid") ? twCom.fn.removeClass(self,"valid") : '';
           twCom.fn.addClass(self,"invalid");
         }
-        
+
         // focus아웃 이벤트시에 active클래스 제거
         twCom.fn.removeClass(self,"active");
       };
