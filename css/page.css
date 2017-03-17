@@ -273,6 +273,8 @@ main {
     font-size: 1.5rem; } }
 
 @media only screen and (max-width: 720px) {
+  .poliocard {
+    margin: 0.3rem 0; }
   #aboutModal {
     width: 300px; }
   .scroll-down-trigger, .scroll-up-trigger {
