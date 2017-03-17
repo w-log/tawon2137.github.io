@@ -12,50 +12,45 @@
 :-ms-input-placeholder {
   color: grey; }
 
-input[type=search] :-ms-input-placeholder,
-input[type=search] ::-moz-placeholder,
-input[type=search] :-moz-placeholder,
-input[type=search] ::-webkit-input-placeholder {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: bold;
-  content: "&#xE87C"; }
-
-html {
-  font-size: 12px; }
-
-#logmodal {
-  width: 95%; }
-
-@media only screen and (min-width: 720px) {
-  html {
-    font-size: 14px; }
-  #logmodal {
-    width: 55%; } }
-
-@media only screen and (min-width: 1024px) {
-  html {
-    font-size: 16px; }
-  #logmodal {
-    width: 30%; } }
+.input-field-label {
+  bottom: 0;
+  font-size: 1rem;
+  pointer-events: none;
+  position: absolute;
+  top: 0.8rem;
+  left: 0;
+  width: 100%;
+  transform-origin: 0 0;
+  white-space: nowrap;
+  text-align: left;
+  -webkit-transition: color 0.2s, transform 0.2s;
+  -moz-transition: color 0.2s, transform 0.2s;
+  -o-transition: color 0.2s, transform 0.2s;
+  -ms-transition: color 0.2s, transform 0.2s;
+  transition: color 0.2s, transform 0.2s; }
 
 .tw-input-field {
   position: relative;
   margin: .5rem 0;
   user-select: none; }
+  .tw-input-field.col label {
+    left: 0.75rem; }
+  .tw-input-field.col hr.focusline {
+    width: calc(100% - 1.5rem);
+    margin-left: 0.75rem; }
   .tw-input-field hr.focusline {
     position: absolute;
-    background: grey;
     margin: 0;
     left: 0;
     bottom: 0;
-    width: calc(100%);
+    width: 100%;
     height: 2px;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+    background: #1a237e;
+    -webkit-transition: transform 0.2s ease,background 0.2s ease;
+    -moz-transition: transform 0.2s ease,background 0.2s ease;
+    -o-transition: transform 0.2s ease,background 0.2s ease;
+    -ms-transition: transform 0.2s ease,background 0.2s ease;
+    transition: transform 0.2s ease,background 0.2s ease;
     -webkit-transform: scaleX(0);
     -moz-transform: scaleX(0);
     -o-transform: scaleX(0);
@@ -66,11 +61,6 @@ html {
     user-select: none;
     -webkit-user-drag: none;
     -webkit-tap-highlight-color: transparent; }
-  .tw-input-field hr.bottomline {
-    margin: 0;
-    z-index: -1;
-    border-width: 1px;
-    border-style: inset; }
 
 input:not([type]),
 input[type=text],
@@ -89,13 +79,186 @@ input[type=search] {
   box-shadow: none;
   height: 3rem;
   font-size: 1rem;
+  color: inherit;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
   transition: all 0.3s ease;
   border: 0;
-  padding: 0 0.5rem; }
+  border-bottom: solid 1px rgba(0, 0, 0, 0.3); }
+  input:not([type]).dirty + .input-field-label,
+  input[type=text].dirty + .input-field-label,
+  input[type=password].dirty + .input-field-label,
+  input[type=email].dirty + .input-field-label,
+  input[type=url].dirty + .input-field-label,
+  input[type=time].dirty + .input-field-label,
+  input[type=date].dirty + .input-field-label,
+  input[type=datetime].dirty + .input-field-label,
+  input[type=datetime-local].dirty + .input-field-label,
+  input[type=tel].dirty + .input-field-label,
+  input[type=number].dirty + .input-field-label,
+  input[type=search].dirty + .input-field-label {
+    -webkit-transform: translateY(-1.5rem) scale(0.7);;
+    -moz-transform: translateY(-1.5rem) scale(0.7);;
+    -o-transform: translateY(-1.5rem) scale(0.7);;
+    -ms-transform: translateY(-1.5rem) scale(0.7);;
+    transform: translateY(-1.5rem) scale(0.7);; }
+    input:not([type]).dirty + .input-field-label + hr.focusline,
+    input[type=text].dirty + .input-field-label + hr.focusline,
+    input[type=password].dirty + .input-field-label + hr.focusline,
+    input[type=email].dirty + .input-field-label + hr.focusline,
+    input[type=url].dirty + .input-field-label + hr.focusline,
+    input[type=time].dirty + .input-field-label + hr.focusline,
+    input[type=date].dirty + .input-field-label + hr.focusline,
+    input[type=datetime].dirty + .input-field-label + hr.focusline,
+    input[type=datetime-local].dirty + .input-field-label + hr.focusline,
+    input[type=tel].dirty + .input-field-label + hr.focusline,
+    input[type=number].dirty + .input-field-label + hr.focusline,
+    input[type=search].dirty + .input-field-label + hr.focusline {
+      -webkit-transform: scaleX(1);
+      -moz-transform: scaleX(1);
+      -o-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+      transform: scaleX(1); }
+  input:not([type])[placeholder] + .input-field-label,
+  input[type=text][placeholder] + .input-field-label,
+  input[type=password][placeholder] + .input-field-label,
+  input[type=email][placeholder] + .input-field-label,
+  input[type=url][placeholder] + .input-field-label,
+  input[type=time][placeholder] + .input-field-label,
+  input[type=date][placeholder] + .input-field-label,
+  input[type=datetime][placeholder] + .input-field-label,
+  input[type=datetime-local][placeholder] + .input-field-label,
+  input[type=tel][placeholder] + .input-field-label,
+  input[type=number][placeholder] + .input-field-label,
+  input[type=search][placeholder] + .input-field-label {
+    -webkit-transform: translateY(-1.5rem) scale(0.7);;
+    -moz-transform: translateY(-1.5rem) scale(0.7);;
+    -o-transform: translateY(-1.5rem) scale(0.7);;
+    -ms-transform: translateY(-1.5rem) scale(0.7);;
+    transform: translateY(-1.5rem) scale(0.7);; }
+  input:not([type]).valid + .input-field-label,
+  input[type=text].valid + .input-field-label,
+  input[type=password].valid + .input-field-label,
+  input[type=email].valid + .input-field-label,
+  input[type=url].valid + .input-field-label,
+  input[type=time].valid + .input-field-label,
+  input[type=date].valid + .input-field-label,
+  input[type=datetime].valid + .input-field-label,
+  input[type=datetime-local].valid + .input-field-label,
+  input[type=tel].valid + .input-field-label,
+  input[type=number].valid + .input-field-label,
+  input[type=search].valid + .input-field-label {
+    color: #76ff03; }
+    input:not([type]).valid + .input-field-label + hr.focusline,
+    input[type=text].valid + .input-field-label + hr.focusline,
+    input[type=password].valid + .input-field-label + hr.focusline,
+    input[type=email].valid + .input-field-label + hr.focusline,
+    input[type=url].valid + .input-field-label + hr.focusline,
+    input[type=time].valid + .input-field-label + hr.focusline,
+    input[type=date].valid + .input-field-label + hr.focusline,
+    input[type=datetime].valid + .input-field-label + hr.focusline,
+    input[type=datetime-local].valid + .input-field-label + hr.focusline,
+    input[type=tel].valid + .input-field-label + hr.focusline,
+    input[type=number].valid + .input-field-label + hr.focusline,
+    input[type=search].valid + .input-field-label + hr.focusline {
+      background: #76ff03; }
+  input:not([type]).invalid + .input-field-label,
+  input[type=text].invalid + .input-field-label,
+  input[type=password].invalid + .input-field-label,
+  input[type=email].invalid + .input-field-label,
+  input[type=url].invalid + .input-field-label,
+  input[type=time].invalid + .input-field-label,
+  input[type=date].invalid + .input-field-label,
+  input[type=datetime].invalid + .input-field-label,
+  input[type=datetime-local].invalid + .input-field-label,
+  input[type=tel].invalid + .input-field-label,
+  input[type=number].invalid + .input-field-label,
+  input[type=search].invalid + .input-field-label {
+    color: #d50000; }
+    input:not([type]).invalid + .input-field-label + hr.focusline,
+    input[type=text].invalid + .input-field-label + hr.focusline,
+    input[type=password].invalid + .input-field-label + hr.focusline,
+    input[type=email].invalid + .input-field-label + hr.focusline,
+    input[type=url].invalid + .input-field-label + hr.focusline,
+    input[type=time].invalid + .input-field-label + hr.focusline,
+    input[type=date].invalid + .input-field-label + hr.focusline,
+    input[type=datetime].invalid + .input-field-label + hr.focusline,
+    input[type=datetime-local].invalid + .input-field-label + hr.focusline,
+    input[type=tel].invalid + .input-field-label + hr.focusline,
+    input[type=number].invalid + .input-field-label + hr.focusline,
+    input[type=search].invalid + .input-field-label + hr.focusline {
+      background: #d50000; }
+  input:not([type]).active + .input-field-label,
+  input[type=text].active + .input-field-label,
+  input[type=password].active + .input-field-label,
+  input[type=email].active + .input-field-label,
+  input[type=url].active + .input-field-label,
+  input[type=time].active + .input-field-label,
+  input[type=date].active + .input-field-label,
+  input[type=datetime].active + .input-field-label,
+  input[type=datetime-local].active + .input-field-label,
+  input[type=tel].active + .input-field-label,
+  input[type=number].active + .input-field-label,
+  input[type=search].active + .input-field-label {
+    color: #1a237e;
+    -webkit-transform: translateY(-1.5rem) scale(0.7);;
+    -moz-transform: translateY(-1.5rem) scale(0.7);;
+    -o-transform: translateY(-1.5rem) scale(0.7);;
+    -ms-transform: translateY(-1.5rem) scale(0.7);;
+    transform: translateY(-1.5rem) scale(0.7);; }
+    input:not([type]).active + .input-field-label + hr.focusline,
+    input[type=text].active + .input-field-label + hr.focusline,
+    input[type=password].active + .input-field-label + hr.focusline,
+    input[type=email].active + .input-field-label + hr.focusline,
+    input[type=url].active + .input-field-label + hr.focusline,
+    input[type=time].active + .input-field-label + hr.focusline,
+    input[type=date].active + .input-field-label + hr.focusline,
+    input[type=datetime].active + .input-field-label + hr.focusline,
+    input[type=datetime-local].active + .input-field-label + hr.focusline,
+    input[type=tel].active + .input-field-label + hr.focusline,
+    input[type=number].active + .input-field-label + hr.focusline,
+    input[type=search].active + .input-field-label + hr.focusline {
+      -webkit-transform: scaleX(1);
+      -moz-transform: scaleX(1);
+      -o-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+      transform: scaleX(1); }
+  input:not([type]).valid + .input-field-label,
+  input[type=text].valid + .input-field-label,
+  input[type=password].valid + .input-field-label,
+  input[type=email].valid + .input-field-label,
+  input[type=url].valid + .input-field-label,
+  input[type=time].valid + .input-field-label,
+  input[type=date].valid + .input-field-label,
+  input[type=datetime].valid + .input-field-label,
+  input[type=datetime-local].valid + .input-field-label,
+  input[type=tel].valid + .input-field-label,
+  input[type=number].valid + .input-field-label,
+  input[type=search].valid + .input-field-label {
+    -webkit-transform: translateY(-1.5rem) scale(0.7);;
+    -moz-transform: translateY(-1.5rem) scale(0.7);;
+    -o-transform: translateY(-1.5rem) scale(0.7);;
+    -ms-transform: translateY(-1.5rem) scale(0.7);;
+    transform: translateY(-1.5rem) scale(0.7);; }
+    input:not([type]).valid + .input-field-label + hr.focusline,
+    input[type=text].valid + .input-field-label + hr.focusline,
+    input[type=password].valid + .input-field-label + hr.focusline,
+    input[type=email].valid + .input-field-label + hr.focusline,
+    input[type=url].valid + .input-field-label + hr.focusline,
+    input[type=time].valid + .input-field-label + hr.focusline,
+    input[type=date].valid + .input-field-label + hr.focusline,
+    input[type=datetime].valid + .input-field-label + hr.focusline,
+    input[type=datetime-local].valid + .input-field-label + hr.focusline,
+    input[type=tel].valid + .input-field-label + hr.focusline,
+    input[type=number].valid + .input-field-label + hr.focusline,
+    input[type=search].valid + .input-field-label + hr.focusline {
+      -webkit-transform: scaleX(1);
+      -moz-transform: scaleX(1);
+      -o-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+      transform: scaleX(1); }
   input:not([type]):focus,
   input[type=text]:focus,
   input[type=password]:focus,
@@ -109,41 +272,6 @@ input[type=search] {
   input[type=number]:focus,
   input[type=search]:focus {
     outline: 0; }
-  input:not([type]):focus + hr.focusline,
-  input[type=text]:focus + hr.focusline,
-  input[type=password]:focus + hr.focusline,
-  input[type=email]:focus + hr.focusline,
-  input[type=url]:focus + hr.focusline,
-  input[type=time]:focus + hr.focusline,
-  input[type=date]:focus + hr.focusline,
-  input[type=datetime]:focus + hr.focusline,
-  input[type=datetime-local]:focus + hr.focusline,
-  input[type=tel]:focus + hr.focusline,
-  input[type=number]:focus + hr.focusline,
-  input[type=search]:focus + hr.focusline {
-    -webkit-transform: scaleX(1);
-    -moz-transform: scaleX(1);
-    -o-transform: scaleX(1);
-    -ms-transform: scaleX(1);
-    transform: scaleX(1); }
-  input:not([type]).valid + hr.focusline,
-  input[type=text].valid + hr.focusline,
-  input[type=password].valid + hr.focusline,
-  input[type=email].valid + hr.focusline,
-  input[type=url].valid + hr.focusline,
-  input[type=time].valid + hr.focusline,
-  input[type=date].valid + hr.focusline,
-  input[type=datetime].valid + hr.focusline,
-  input[type=datetime-local].valid + hr.focusline,
-  input[type=tel].valid + hr.focusline,
-  input[type=number].valid + hr.focusline,
-  input[type=search].valid + hr.focusline {
-    background: blue;
-    -webkit-transform: scaleX(1);
-    -moz-transform: scaleX(1);
-    -o-transform: scaleX(1);
-    -ms-transform: scaleX(1);
-    transform: scaleX(1); }
 
 .tw-select-box {
   display: block;

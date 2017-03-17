@@ -56,6 +56,7 @@
     var scrollBtn_2 = document.getElementById("scroll-down-2");
     var scrollBtn_3 = document.getElementById("scroll-down-3");
     var scrollBtn_4 = document.getElementById("scroll-up");
+
     scrollBtn_1.setAttribute("data-scrollTarget", "skill");
     scrollBtn_2.setAttribute("data-scrollTarget", "introduction");
     scrollBtn_3.setAttribute("data-scrollTarget", "resume");
@@ -73,6 +74,7 @@
     scrollBtn_2.addEventListener("click",clickToscroll);
     scrollBtn_3.addEventListener("click",clickToscroll);
     scrollBtn_4.addEventListener("click",clickToscroll);
+
     window.addEventListener("scroll", function(e){
       //  if ( this.scrollY === 0 ){ return false; }
         var header = document.getElementsByTagName("header")[0];

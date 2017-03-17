@@ -1,0 +1,43 @@
+#toastcontainer {
+  position: fixed;
+  display: block;
+  max-width: 90%;
+  right: 0;
+  top: 0;
+  z-index: 2000; }
+
+.tw-toast {
+  position: relative;
+  display: block;
+  margin: 1rem 1rem;
+  right: 0;
+  top: auto;
+  z-index: 2001;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  line-height: 3rem;
+  height: 3rem;
+  text-align: center;
+  padding: 0 2rem;
+  clear: both;
+  border-radius: 5px;
+  transform: translateX(200%) translateY(0);
+  opacity: 0;
+  will-change: opacity, transform, margin;
+  -webkit-transition: opacity 0.15s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), margin 0.3s cubic-bezier(0.23, 1, 0.32, 1);;
+  -moz-transition: opacity 0.15s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), margin 0.3s cubic-bezier(0.23, 1, 0.32, 1);;
+  -o-transition: opacity 0.15s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), margin 0.3s cubic-bezier(0.23, 1, 0.32, 1);;
+  -ms-transition: opacity 0.15s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), margin 0.3s cubic-bezier(0.23, 1, 0.32, 1);;
+  transition: opacity 0.15s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), margin 0.3s cubic-bezier(0.23, 1, 0.32, 1);; }
+
+@media only screen and (max-width: 720px) {
+  #toastcontainer {
+    max-width: 100%;
+    top: auto;
+    bottom: 0;
+    left: 0; }
+  .tw-toast {
+    width: 95%;
+    margin: 0.3rem auto;
+    transform: translateX(0) translateY(35px); } }

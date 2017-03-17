@@ -6,12 +6,22 @@ $maxcol : 12;
 html{
   box-sizing: border-box;
   font-family: 'Iropke Batang', serif;
+  font-size: 12px;
 }
-
 body{
   margin: 0;
 }
 
+@media only screen and (min-width : 720px) {
+  html{
+      font-size: 14px;
+  }
+}
+@media only screen and (min-width : 1024px) {
+  html{
+      font-size: 16px;
+  }
+}
 
 .row {
   margin-left: auto;
@@ -99,17 +109,17 @@ body{
 }
 
 .show-l{
-  display: block !important;
+  display: inline-block !important;
 }
 
 .hide-m{
-  display: block !important;
+  display: inline-block !important;
 }
 .show-m{
   display: none !important;
 }
 .hide-s{
-  display: block !important;
+  display: inline-block !important;
 }
 .show-s{
   display: none !important;
@@ -118,7 +128,7 @@ body{
 @media only screen and (max-width : 1366px) {
 
   .hide-l{
-    display: block !important;
+    display: inline-block !important;
   }
   .show-l{
     display: none !important;
@@ -127,7 +137,7 @@ body{
     display: none !important;
   }
   .show-m{
-    display: block !important;
+    display: inline-block !important;
   }
 }
 @media only screen and (max-width : 720px) {
@@ -135,6 +145,6 @@ body{
     display: none !important;
   }
   .show-s{
-    display: block !important;
+    display: inline-block !important;
   }
 }

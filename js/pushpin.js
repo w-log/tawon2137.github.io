@@ -1,6 +1,7 @@
 var pushpin = function(){
   // push-pin 대상의 main-content 라는 Element의 배열을 변수에 담는다.
   var pushZones = document.getElementsByTagName("main")[0].querySelectorAll(".main-content");
+  if ( pushZones.length === 0 ){ return false; };
   /*
   main태그 상위에 위치한 헤더의 크기와 절대위치에서 top 좌표를 더해야
   현재 사용자가 스코롤링 하는 top 위치와 엘리먼트사이의 간격을 측정할수 있기떄문에 header 엘리먼트를 변수에 담음
@@ -66,7 +67,7 @@ var pushpin = function(){
            한마디로 현재위치가 대상엘리먼트 안에 존재할때에 fixed는 유효하다.
            이 경우 push-pin 클래스가 있을시에 클래스를 제거하고 fixed라는 클래스를 추가한다. fixed클래스는 css position을 fixed로 변경한다.
            */
-          if ( top <= 0 && markCheck > 0 ){
+          if ( top <= 1 && markCheck > 0 ){
               element_css.setCss("top", "0px" );
               twCom.fn.addClass(content, "show");
               twCom.fn.hasClass(navElement, "push-pin") ? twCom.fn.removeClass(navElement, "push-pin") : '';

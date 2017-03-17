@@ -42,9 +42,16 @@
   margin: auto auto; }
   .view-icon:hover {
     background: transparent;
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
     transform: scale(1.2); }
   .view-icon.fb-icon {
     color: #5C6BC0; }
+
+.poliocard {
+  margin: 0.5rem; }
 
 #aboutModal .profile > img {
   width: 80px;
@@ -158,6 +165,10 @@ main {
     left: 0;
     right: 0;
     margin: 0 auto;
+    -webkit-transform: translateY(-60px);
+    -moz-transform: translateY(-60px);
+    -o-transform: translateY(-60px);
+    -ms-transform: translateY(-60px);
     transform: translateY(-60px);
     z-index: 100;
     opacity: 1;
@@ -175,6 +186,10 @@ main {
     animation: none; }
     .scroll-down-trigger:hover::after {
       opacity: 0;
+      -webkit-transform: translateY(-30px);
+      -moz-transform: translateY(-30px);
+      -o-transform: translateY(-30px);
+      -ms-transform: translateY(-30px);
       transform: translateY(-30px); }
 
 .scroll-up-trigger {
@@ -209,6 +224,10 @@ main {
     left: 0;
     right: 0;
     margin: 0 auto;
+    -webkit-transform: translateY(40px);
+    -moz-transform: translateY(40px);
+    -o-transform: translateY(40px);
+    -ms-transform: translateY(40px);
     transform: translateY(40px);
     z-index: 100;
     opacity: 1;
@@ -226,6 +245,10 @@ main {
     animation: none; }
     .scroll-up-trigger:hover::after {
       opacity: 0;
+      -webkit-transform: translateY(20px);
+      -moz-transform: translateY(20px);
+      -o-transform: translateY(20px);
+      -ms-transform: translateY(20px);
       transform: translateY(20px); }
 
 .fixed {
@@ -266,8 +289,8 @@ main {
     .content-card .card-content {
       margin-bottom: 2rem; } }
 
-@-webkit-keyframes triggerMove {50% {transform : translateY(-5px);}, 100%{transform : translateY(0px);}}
-  @-moz-keyframes triggerMove {50% {transform : translateY(-5px);}, 100%{transform : translateY(0px);}}
-  @-o-keyframes triggerMove {50% {transform : translateY(-5px);}, 100%{transform : translateY(0px);}}
-  @-ms-keyframes triggerMove {50% {transform : translateY(-5px);}, 100%{transform : translateY(0px);}}
-  @keyframes triggerMove {50% {transform : translateY(-5px);}, 100%{transform : translateY(0px);}};
+@-webkit-keyframes triggerMove {50% {@include transform(translateY(-5px));}, 100%{@include transform(translateY(0px));}}
+  @-moz-keyframes triggerMove {50% {@include transform(translateY(-5px));}, 100%{@include transform(translateY(0px));}}
+  @-o-keyframes triggerMove {50% {@include transform(translateY(-5px));}, 100%{@include transform(translateY(0px));}}
+  @-ms-keyframes triggerMove {50% {@include transform(translateY(-5px));}, 100%{@include transform(translateY(0px));}}
+  @keyframes triggerMove {50% {@include transform(translateY(-5px));}, 100%{@include transform(translateY(0px));}};

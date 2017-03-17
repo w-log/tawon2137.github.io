@@ -1,0 +1,26 @@
+/*Pc*/
+.formcheck{
+    position: absolute;
+    width: 500px;
+    height: auto;
+    margin: auto;
+    top:0;
+    bottom:0;
+    left:0;
+    right: 0;
+    text-align: center;
+    border: 1px solid black;
+}
+/*태블릿 미디어쿼리*/
+@media only screen and (max-width : 1366px) {
+    .formcheck{
+
+    }
+}
+
+/*스마트폰 미디어쿼리*/
+@media only screen and (max-width : 720px) {
+  .formcheck{
+    width: 300px;
+  }
+ }

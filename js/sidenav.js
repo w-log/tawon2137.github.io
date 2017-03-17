@@ -7,6 +7,7 @@
        var sideNav_trigger = getSidenavtrigger(e);
 
 
+
        if ( sideNav_trigger !== null ){
          var trigger_type = sideNav_trigger.getAttribute("data-trigger") || "open";
            if ( "ontouchstart" in window && sideNav_trigger.getAttribute("id") === "drag-target"){
@@ -137,7 +138,7 @@
         }
     }
     function createdragTarget(element){
-        if ( document.getElementById("drag-target") === null ){
+        if ( document.getElementById("drag-target") === null && element !== null){
             var dragTarget = document.createElement("div");
             dragTarget.setAttribute("id", "drag-target");
             dragTarget.setAttribute("data-sidenav", element.getAttribute("id"));
@@ -318,6 +319,7 @@
         }else{
             document.body.addEventListener('click', triggerCheck, false);
         }
+
         createdragTarget(document.getElementById("myside-nav"));
     });
 })();

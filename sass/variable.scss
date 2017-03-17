@@ -37,6 +37,10 @@ $input-bottomline-height : 1px;
 $placeholder-text-color : grey;
 $input-padding : 0 0.5rem;
 $input-font-size : 1rem;
+$input-active-color : #1a237e;
+$input-dirty-color : #0288d1;
+$input-valid-color :  #76ff03;
+$input-invalid-color : #d50000;
 //dropdown
 $dropdown-column-height : 1.5rem;
 $dropdown-box-shadow : 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
@@ -55,3 +59,8 @@ $nav-height-mobile : 40px;
 $nav-radius : 3px;
 $nav-shadow : 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
 $nav-li-padding : 0 1rem;
+
+//toast
+$toast-l-height : 3rem;
+$toast-border-radius: 5px;
+$toast-padding : 2rem;

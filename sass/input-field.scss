@@ -18,57 +18,42 @@
   color: $placeholder-text-color;
 }
 
-input[type=search] {
-  & :-ms-input-placeholder,
-  ::-moz-placeholder,
-  :-moz-placeholder,
-  ::-webkit-input-placeholder,{
-      font-family:'Material Icons';
-      font-style: normal;
-      font-weight: bold;
-      content: "&#xE87C";
-  }
-}
-
-html{
-  font-size: 12px;
-}
-#logmodal{
-    width: 95%;
-}
-
-@media only screen and (min-width : 720px) {
-  html{
-      font-size: 14px;
-  }
-  #logmodal{
-      width: 55%;
-  }
-}
 
 
-@media only screen and (min-width : 1024px) {
-  html{
-      font-size: 16px;
-  }
-  #logmodal{
-      width: 30%;
-  }
+.input-field-label{
+    bottom: 0;
+    font-size: 1rem;
+    pointer-events: none;
+    position: absolute;
+    top: 0.8rem;
+    left:0;
+    width: 100%;
+    transform-origin: 0 0;
+    white-space: nowrap;
+    text-align: left;
+    @include transition("color 0.2s, transform 0.2s");
 }
 
 .tw-input-field{
     position: relative;
     margin: .5rem 0;
     user-select : none;
+    &.col label{
+      left: 0.75rem;
+    }
+    &.col hr.focusline{
+      width: calc(100% - 1.5rem);
+      margin-left: 0.75rem;
+    }
   & hr.focusline{
       position: absolute;
-      background: grey;
       margin: 0;
       left: 0;
       bottom:0;
-      width: calc(100%);
+      width: 100%;
       height: $input-focusline-height;
-      @include transition(all 0.3s ease);
+      background: $input-active-color;
+      @include transition("transform 0.2s ease,background 0.2s ease");
       @include transform(scaleX(0));
       z-index: 1;
       border : 0;
@@ -76,19 +61,6 @@ html{
       -webkit-user-drag: none;
       -webkit-tap-highlight-color: transparent;
   }
-  & hr.bottomline{
-      margin: 0;
-      z-index: -1;
-      border-width: $input-bottomline-height;
-      border-style: inset;
-  }
-  // & i.material-icons {
-  //   position: relative;
-  //   height: $input-height;
-  //   line-height: $input-height;
-  //   top:$input-height;
-  //   color : $placeholder-text-color;
-  // }
 }
 
 
@@ -110,19 +82,59 @@ input[type=search] {
     box-shadow: none;
     height: $input-height;
     font-size: $input-font-size;
+    color:inherit;
     @include transition(all 0.3s ease);
     border: 0;
-    padding: $input-padding;
+    border-bottom: solid 1px rgba(0,0,0,0.3);
+    &.dirty + .input-field-label{
+        @include transform("translateY(-1.5rem) scale(0.7);");
+        & + hr.focusline{
+          @include transform(scaleX(1));
+        }
+    }
+
+
+    &[placeholder] + .input-field-label{
+        @include transform("translateY(-1.5rem) scale(0.7);");
+    }
+
+    &.valid + .input-field-label{
+        color: $input-valid-color;
+        & + hr.focusline{
+          background: $input-valid-color;
+        }
+    }
+
+    &.invalid + .input-field-label{
+        color: $input-invalid-color;
+        & + hr.focusline{
+          background: $input-invalid-color;
+        }
+    }
+
+    //active = focus
+    &.active + .input-field-label{
+        color:  $input-active-color;
+        @include transform("translateY(-1.5rem) scale(0.7);");
+        & + hr.focusline{
+          @include transform(scaleX(1));
+        }
+    }
+
+    //valid 값이 있을때
+    &.valid + .input-field-label{
+      @include transform("translateY(-1.5rem) scale(0.7);");
+      & + hr.focusline{
+          @include transform(scaleX(1));
+      }
+    }
+
+
     &:focus{
         outline: 0;
     }
-    &:focus + hr.focusline{
-      @include transform(scaleX(1));
-    }
-    &.valid + hr.focusline{
-      background: blue;
-      @include transform(scaleX(1));
-    }
+
+
     &disabled{
     }
 }

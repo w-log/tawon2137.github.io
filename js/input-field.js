@@ -1,37 +1,80 @@
 (function () {
     "use strict";
-
+    //정규표현식 객체를 가지고있는 객체 변수
+    var regExpObj = {
+      "mail" : /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i,
+      "number" : /^[0-9]+$/i,
+      "kor" : /^[ㄱ-ㅎ|ㅏ-ㅣ|가-힣|\s]+$/i,
+      "phoneNumber" : /^[0-9]{2,3}-[0-9]{3,4}-[0-9]|[0-9]{2,3}[0-9]{3,4}[0-9]{4}$/
+    };
 
       function TextField() {
-          // input field 생성자
+          // input field 생성자 타입이 없는 dom문서내에 input을 모두 검색함
           if ( this instanceof TextField ){
             this.Elements = document.querySelectorAll("input:not([type]),input[type=text],input[type=password],input[type=email],input[type=url],input[type=time],input[type=date],input[type=datetime],input[type=datetime-local],input[type=tel],input[type=number],input[type=search]");
+            // init 함수 호출
             this.Init();
-
           }else{
              return new TextField();
           }
       }
 
 
-
+      function validation(element){
+          var textValue = element.value || null;
+          var regType = element.getAttribute("data-regexp");
+          var command = false;
+          if ( textValue  && regType ){
+              command = regExpObj[regType].test(textValue);
+          }
+          return command;
+      }
 
       TextField.prototype.Init = function(){
+          // 검색한 문서내의 DOM 갯수에 focus와 blur이벤트를 등록함
           var text_fields = this.Elements;
           for (var i = 0; i < text_fields.length; i++) {
             text_fields[i].addEventListener("focus", this.field_focus);
             text_fields[i].addEventListener("blur", this.field_blur);
           }
       };
+
       TextField.prototype.field_focus = function(){
+        // focus이벤트가 발생될떄 active 라는 클래스를 추가
+        var self = this;
         twCom.fn.addClass(this , "active");
       };
       TextField.prototype.field_blur = function(){
-        twCom.fn.removeClass(this,"active");
-        //중첩 3항 연산자 text_field안에 value가 존재하면 valid라는 class 를 추가하고 value가 존재하지않으면 valid 클래스를 제거해야함
-        //즉 text_field 내에 입력값이 존재하면 valid 라는 class를 추가하고 없으면 field 내에 valid 라는 클래스를 찾아서 있으면 제거함
-        (this.value.length > 0 ? twCom.fn.addClass(this,"valid") : ( twCom.fn.hasClass(this,"valid") ? twCom.fn.removeClass(this,"valid") : "" ));
+        var self = this;
+        // focusout 이벤트가 발생될떄 엘리먼트에 validate 라는 클래스가 있는지 검색함
+        var validate = twCom.fn.hasClass(self ,"validate");
+        var search = false;
+        // validate라는 클래스가 input에 존재하면 validation 함수를 통해서 유효성 검사를 수행하고 리턴하는 값을을 search 변수에 치환함.
+        if ( validate ){
+          search = validation(self);
+        }
 
+        // 엘리먼트에 값이 있으면 dirty라는 클래스를 추가 없으면 제거
+        if ( self.value.length > 0 ){
+          twCom.fn.addClass(self,"dirty");
+        }else{
+          twCom.fn.hasClass(self,"valid") ? twCom.fn.removeClass(self,"valid") : '';
+          twCom.fn.hasClass(self,"invalid") ? twCom.fn.removeClass(self,"invalid") : '';
+          twCom.fn.hasClass(self,"dirty") ? twCom.fn.removeClass(self,"dirty") : '';
+        }
+
+        // dirty 라는 클래스가 엘리먼트에 존재할떄 (값이 있을때) search로 받은 유효성검사값이 true면은 valid클래스추가 유효성검사가 false일때는 invalid 속성추가
+        // valid 클래스는 유효성검사가 true, invalid = false;
+        if ( twCom.fn.hasClass(self,"dirty") && search ){
+          twCom.fn.hasClass(self,"invalid") ? twCom.fn.removeClass(self,"invalid") : '';
+          twCom.fn.addClass(self,"valid");
+        }else if( validate && twCom.fn.hasClass(self,"dirty") ){
+          twCom.fn.hasClass(self,"valid") ? twCom.fn.removeClass(self,"valid") : '';
+          twCom.fn.addClass(self,"invalid");
+        }
+        
+        // focus아웃 이벤트시에 active클래스 제거
+        twCom.fn.removeClass(self,"active");
       };
 
 
@@ -88,11 +131,10 @@
       SelectBox.prototype.optionExtend = function(litag,  Option, input){
           var self = this;
           var span = document.createElement("span");
-          var value = Option.getAttribute("value") || Option.innerText;
+          var value = Option.getAttribute("value") || "";
 
            litag.setAttribute("value", value);
            span.innerText = Option.innerText;
-
            if ( Option.selected ){
              twCom.fn.addClass(litag , "selected");
              input.setAttribute("value",litag.getAttribute("value"));

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <title>폼 유효성 검사 페이지</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Sass와 Native Js 기반의 Css 프레임워크 프로젝트</title>
+    <link href='https://fonts.googleapis.com/css?family=Baloo+Bhaina' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/twCom.min.css">
+    <link rel="stylesheet" href="./css/formcheck.css">
+    <script>
+      function check(e){
+          var form = document.getElementsByTagName("form")[0];
+          var validateElement = form.querySelectorAll(".validate");
+          var invalidElement = form.querySelectorAll(".validate.invalid");
+          var validElement = form.querySelectorAll(".validate.valid");
+          var novalidateElement = form.querySelectorAll("input:not(.validate)");
+          var valueElement = form.querySelectorAll("input:not(.dirty)");
+          twCom.fn.toast("유효성 검증이 필요한 input 총 개 : " + validateElement.length + " ", 5000);
+          twCom.fn.toast("통과한 유효성 검증 input 총 개 : " + validElement.length + " ", 5000);
+          twCom.fn.toast("통과하지못한 유효성 검증 input 총 개 : " + invalidElement.length + " ", 5000);
+          twCom.fn.toast("값이 없는 input : " + valueElement.length + " ", 5000);
+      }
+    </script>
+  </head>
+  <body>
+    <main style="height : 100vh; position:relative;">
+
+      <form>
+        <div class="card col s4 formcheck black-text" style="">
+           <div class="card-content row">
+             <div style="font-weight:bold; font-size:1.5rem;">폼 유효성 검사</div>
+             <div class="tw-input-field col s12 black-text" >
+                 <input type="text"  id="valid1" class="validate" name="name"  data-regexp="mail">
+                 <label for="valid1" class="input-field-label" >이메일</label>
+               <hr class="focusline">
+             </div>
+
+             <div class="tw-input-field col s12" >
+                 <input type="text" id="valid2" class="validate" name="name"  data-regexp="phoneNumber">
+                 <label for="valid1" class="input-field-label" >전화번호 양식 - 구분없음</label>
+               <hr class="focusline">
+             </div>
+
+             <div class="tw-input-field col s12" >
+                 <input type="text" id="valid3" class="validate" name="name"  data-regexp="kor">
+                 <label for="valid1" class="input-field-label" >한글과 공백만</label>
+               <hr class="focusline">
+             </div>
+
+             <div class="tw-input-field col s12" >
+                 <input type="text" id="valid4" class="validate" name="name"  data-regexp="number">
+                 <label for="valid1" class="input-field-label" >숫자만</label>
+               <hr class="focusline">
+             </div>
+             <div class="tw-input-field col s12" >
+                 <input type="text" name="name" >
+                 <label for="valid1" class="input-field-label" >아무 유효성검사 없을때</label>
+               <hr class="focusline">
+             </div>
+             <a class="tw-btn-clear waves-effect col s10 push-s1" data-waveColor="white" onclick="check(event)">전송</a>
+             <div class="col s12" style="font-weight:bold; margin-top:1rem;">현재 개인프로젝트로 개발중인 프론트엔드 프레임워크로 간단한 유효성검증을 간단하게 사용 할 수있게 개발해봤습니다.</div>
+             <div class="col s12" style="font-weight:bold; margin-top:1rem; cursor:pointer;" ><span class="gitUrl light-blue-text" onclick="javascript:window.open('https://github.com/tawon2137/TW.js')" ><i class="fa fa-github"></i>Git project URL</span></div>
+          </div>
+        </div>
+      </form>
+
+    </main>
+    <script type="text/javascript" src="./devjs/lib/hammer.js"></script>
+    <script type="text/javascript" src="./devjs/lib/TweenLite.js"></script>
+    <script type="text/javascript" src="./devjs/twCom.min.js"></script>
+  </body>
+</html>

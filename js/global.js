@@ -101,6 +101,83 @@ if( typeof window.twCom === "undefined"){
           return style;
       };
 
+      function getToastcontainer(){
+          var toastContainer = document.getElementById("toastcontainer");
+          var element = null;
+          if ( toastContainer === null ){
+            element = document.createElement("div");
+            element.setAttribute("id","toastcontainer");
+            return document.body.appendChild(element);
+          } else {
+            return toastContainer;
+          }
+      }
+
+      function setDrag(toast, time, duration, self){
+          var mc = new Hammer(toast);
+
+          var swipe = function(e){
+
+            if ( e.eventType === 8 ) { return false; }
+            var direction = e.type === "swipeleft" ? "translateX(-100%)" : "translateX(100%)";
+            var cssObject = {"opacity" : 0, "margin-top" : "-3rem"};
+
+            //스와이프 애니메이션
+            cssObject["-o-transform"] = direction;
+            cssObject["-webkit-transform"] = direction;
+            cssObject["-ms-transform"] = direction;
+            cssObject["-moz-transform"] = direction;
+            cssObject["transform"] = direction;
+            toast.setAttribute("style", self.convertStyle(cssObject));
+
+            setTimeout(function(){
+              toast.parentElement.removeChild(toast);
+            },duration);
+          };
+          mc.on("swipeleft swiperight", swipe);
+      }
+      Global.prototype.toast = function(message, time){
+          var self = this;
+
+          var toastcontainer = getToastcontainer();
+          time = typeof(time) === undefined ? 2000 : time;
+          message = typeof(message) === undefined ? "" : message;
+          var duration = 300,cssObject = {},cssObject2 = {},translateX;
+
+          var toast = document.createElement("span");
+          toast.setAttribute("class", "tw-toast");
+          toast.innerText = message;
+
+          toastcontainer.appendChild(toast);
+
+          translateX = "translateX(0) translateY(0px)";
+          cssObject["-o-transform"] = translateX;
+          cssObject["-webkit-transform"] = translateX;
+          cssObject["-ms-transform"] = translateX;
+          cssObject["-moz-transform"] = translateX;
+          cssObject["transform"] = translateX;
+          cssObject["opacity"] = 1;
+          setTimeout(function(){
+              self.cssObject(toast).cssEach(cssObject);
+          },100);
+
+          setDrag(toast, time, duration, self);
+
+          setTimeout(function(){
+              cssObject["opacity"] = 0;
+              cssObject["margin-top"] = "-3rem";
+              self.cssObject(toast).cssEach(cssObject);
+
+
+              setTimeout(function(){
+                if(toast.parentElement !== null){
+                  toast.parentElement.removeChild(toast);
+                }
+              }, duration);
+
+
+          }, time);
+      };
 
     twCom.fn = new Global();
 })();
