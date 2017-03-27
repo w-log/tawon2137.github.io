@@ -1,246 +1,234 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>introduction page</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <title>Sass와 Native Js 기반의 Css 프레임워크 프로젝트</title>
     <link href='https://fonts.googleapis.com/css?family=Baloo+Bhaina' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="./image/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./css/twCom.min.css">
+    <link rel="stylesheet" href="./css/TW.css">
     <link rel="stylesheet" href="./css/page.css">
-   <style>
-         /*html, body {
-          height: 100%;
-        }*/
-      /*nav ul li a:hover, nav ul li a.active {
-        background-color: rgba(0,0,0,.1);
-      }*/
-      footer {
-        padding-left: 0;
-      }
-   </style>
-  </head>
-  <body>
-    <header class="indigo-l-5-text" >
-      <!-- 헤더 -->
-      <div class="tw-navbar fixed-nav clear"  >
-          <ul >
-              <li class="logoTitle left" style="font-family: 'Baloo Bhaina', cursive; font-weight:normal;"><a href="/">TaeWoong</a></li>
-              <!-- <li class="waves-effect show-m white-text" data-sidenav="myside-nav" data-trigger="open" ><i class="fa fa-bars" aria-hidden="true"></i></li> -->
-              <li class="waves-effect openModal" data-target="aboutModal">About</li>
-          </ul>
-      </div>
-      <div class="slide-container fullscreen" id="topSlide">
 
-        <div class="slide">
-          <img src="/image/code.png">
-          <div class="text-container">
-            <div class="title">Js 기반의 full-stack 예비개발자 김태웅<br>
-               개인페이지 입니다.</div>
-            <div class="content">content zone</div>
-          </div>
+</head>
+
+<body>
+    <header class="indigo-l-5-text">
+        <!-- 헤더 -->
+        <div class="tw-navbar fixed-nav clear" style="position:absolute;">
+            <ul class="container">
+                <li class="logoTitle left" style="font-family: 'Baloo Bhaina', cursive; font-weight:normal;"><a href="/">TaeWoong</a></li>
+                <!-- <li class="waves-effect show-m white-text" data-sidenav="myside-nav" data-trigger="open" ><i class="fa fa-bars" aria-hidden="true"></i></li> -->
+                <li class="waves-effect openModal" data-target="aboutModal">About</li>
+            </ul>
         </div>
-        <button id="scroll-down-1" class="tw-btn-clear scroll-down-trigger" ><i class="fa fa-angle-double-down" aria-hidden="true"></i></button>
-        <div class="button-group bottom">
-          <a class="tw-btn-clear waves-effect view-icon white-text"  onclick="javascript:window.open('https://github.com/tawon2137')" ><i class="fa fa-github"></i></a>
-          <a class="tw-btn-clear waves-effect view-icon indigo-text " ><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+        <div class="slide-container fullscreen" id="topSlide">
+
+            <div class="slide">
+                <img src="/image/code.png">
+                <div class="text-container">
+                    <div class="title">Js 기반의 full-stack 예비개발자 김태웅<br> 개인페이지 입니다.</div>
+                    <div class="content">content zone</div>
+                </div>
+            </div>
+            <button id="scroll-down-1" class="tw-btn-clear scroll-down-trigger"><i class="fa fa-angle-double-down" aria-hidden="true"></i></button>
+            <div class="button-group bottom">
+                <a class="tw-btn-clear waves-effect view-icon white-text" onclick="javascript:window.open('https://github.com/tawon2137')"><i class="fa fa-github"></i></a>
+                <a class="tw-btn-clear waves-effect view-icon indigo-text "><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+            </div>
         </div>
-    </div>
-    <!-- modal about-->
-    <div id="aboutModal" class="modal">
-      <div class="modal-content">
-        <div class="title">about.</div>
-        javascript 기반의 full-stack을 목표로 공부중에 있는 예비개발자 김태웅입니다.<br>
-        현재페이지 레이아웃은 개인프로젝트인 프론트엔드 css 프레임워크에 기반하여 개발되어 있으며,<br>
-        문의사항은 아래 github 이슈로 남겨주시거나, 메일로 남겨주시면 감사하겠습니다.<br>
-        <br>
-        <!-- <div class="profile">
+        <!-- modal about-->
+        <div id="aboutModal" class="modal">
+            <div class="modal-content">
+                <div class="title">about.</div>
+                javascript 기반의 full-stack을 목표로 공부중에 있는 예비개발자 김태웅입니다.<br> 현재페이지 레이아웃은 개인프로젝트인 프론트엔드 css 프레임워크에 기반하여 개발되어 있으며,<br> 문의사항은 아래 github 이슈로 남겨주시거나, 메일로 남겨주시면 감사하겠습니다.<br>
+                <br>
+                <pre class="language-markup" data-src="./componentcode/card.html" ></pre>
+                <!-- <div class="profile">
             <img src="./image/myprofile.png" >
         </div> -->
-        <span class="gitUrl light-blue-text" style="margin:0.5rem;">E-mail : tawon2137@gmail.com</span>
-        <br>
-        <br>
-        <span class="gitUrl light-blue-text" style="cursor:pointer;  margin:0.5rem;" onclick="javascript:window.open('https://github.com/tawon2137/TW.js')" ><i class="fa fa-github"></i>git project URL</span>
-      </div>
-      <div class="modal-footer">
-        <a class="tw-btn-clear waves-effect closeModal">닫기</a>
-      </div>
-    </div>
+                <span class="gitUrl light-blue-text" style="margin:0.5rem;">E-mail : tawon2137@gmail.com</span>
+                <br>
+                <br>
+                <span class="gitUrl light-blue-text" style="cursor:pointer;  margin:0.5rem;" onclick="javascript:window.open('https://github.com/tawon2137/TW.js')"><i class="fa fa-github"></i>git project URL</span>
+            </div>
+            <div class="modal-footer">
+                <a class="tw-btn-clear waves-effect closeModal">닫기</a>
+            </div>
+        </div>
 
-    <!-- sideNav-->
-    <div id="myside-nav" class="tw-sideNav  white-text" >
-        <div class="profile">
-          <div class="background">
-            <img src="./image/profile1.jpg">
-          </div>
+        <!-- sideNav-->
+        <div id="myside-nav" class="tw-sideNav  white-text">
+            <div class="profile">
+                <div class="background">
+                    <img src="./image/profile1.jpg">
+                </div>
 
-          <!-- <div class="avatar">
+                <!-- <div class="avatar">
               <img src="./image/myprofile.png" >
           </div> -->
-          <span class="name" >sideNav </span>
-          <span class="title" >뭘넣어야하나?</span>
+                <span class="name">sideNav </span>
+                <span class="title">뭘넣어야하나?</span>
+            </div>
+            <a class="waves-effect menu" data-waveColor="red">Services</a>
+            <a class="waves-effect menu" data-waveColor="black">Clients</a>
+            <a class="waves-effect menu" data-waveColor="yellow">Contact</a>
+            <a class="waves-effect menu openModal" data-target="aboutModal" data-waveColor="yellow">about</a>
+            <!-- <button id="closeNav" class="tw-btn-clear waves-effect" data-waveColor="black" data-trigger="close" data-sidenav="myside-nav" >닫기<i class="fa fa-sign-out"></i></button> -->
         </div>
-        <a class="waves-effect menu" data-waveColor="red">Services</a>
-        <a class="waves-effect menu" data-waveColor="black">Clients</a>
-        <a class="waves-effect menu" data-waveColor="yellow">Contact</a>
-        <a class="waves-effect menu openModal" data-target="aboutModal" data-waveColor="yellow">about</a>
-        <!-- <button id="closeNav" class="tw-btn-clear waves-effect" data-waveColor="black" data-trigger="close" data-sidenav="myside-nav" >닫기<i class="fa fa-sign-out"></i></button> -->
-    </div>
 
     </header>
     <main class="indigo-l-5-text">
-      <!-- 중간 -->
-      <div id="skill" class="main-content indigo-d-2">
+        <!-- 중간 -->
+        <div id="skill" class="main-content indigo-d-2">
 
-        <div class="tw-navbar fixed-nav indigo-d-2 ">
-            <ul>
-                <li class="logoTitle left not-cursor"><i class="fa fa-wrench" aria-hidden="true"></i>&nbsp;개발기술</a></li>
-            </ul>
-        </div>
-
-      <div class="content-card row">
-
-
-          <div class="card-content col s6 l4">
-            <img src="./image/skill1.png">
-            <div class="card-text col s12">
-                HTML
-            </div>
-          </div>
-          <div class="card-content col s6 l4">
-            <img src="./image/skill2.png" style="border-radius: 15px" >
-            <div class="card-text">
-              javascript(ES5)
-            </div>
-          </div>
-
-
-
-
-          <div class="card-content col s6 l4">
-            <img src="./image/skill4.png" >
-            <div class="card-text">
-              Node.Js
-            </div>
-          </div>
-
-          <div class="card-content col s6 l4">
-            <img src="./image/angularjs.png" style="border-radius:50%" >
-            <div class="card-text">
-              Angular.Js
-            </div>
-          </div>
-
-          <div class="card-content col s6 l4">
-            <img src="./image/skill3.svg" >
-            <div class="card-text">
-              CSS
-            </div>
-          </div>
-
-          <div class="card-content col s6 l4">
-            <img src="./image/skill5.png" style="border-radius: 15px" >
-            <div class="card-text">
-              SASS
-            </div>
-          </div>
-
-          <div class="card-content col s6 l4">
-            <img src="./image/mysql.png" style="border-radius: 15px" >
-            <div class="card-text">
-              MySQL
+            <div class="tw-navbar fixed-nav indigo-d-2 ">
+                <ul class="container">
+                    <li class="logoTitle left not-cursor"><i class="fa fa-wrench" aria-hidden="true"></i>&nbsp;개발기술</a>
+                    </li>
+                </ul>
             </div>
 
-          </div>
-          <div class="card-content col s6 l4">
-            <img src="./image/mongodb.png" style="border-radius: 15px" >
-            <div class="card-text">
-              MongoDB
+            <div class="content-card row">
+
+
+                <div class="card-content col s6 l4">
+                    <img src="./image/skill1.png">
+                    <div class="card-text col s12">
+                        HTML
+                    </div>
+                </div>
+                <div class="card-content col s6 l4">
+                    <img src="./image/skill2.png" style="border-radius: 15px">
+                    <div class="card-text">
+                        javascript(ES5)
+                    </div>
+                </div>
+
+
+
+
+                <div class="card-content col s6 l4">
+                    <img src="./image/skill4.png">
+                    <div class="card-text">
+                        Node.Js
+                    </div>
+                </div>
+
+                <div class="card-content col s6 l4">
+                    <img src="./image/angularjs.png" style="border-radius:50%">
+                    <div class="card-text">
+                        Angular.Js
+                    </div>
+                </div>
+
+                <div class="card-content col s6 l4">
+                    <img src="./image/skill3.svg">
+                    <div class="card-text">
+                        CSS
+                    </div>
+                </div>
+
+                <div class="card-content col s6 l4">
+                    <img src="./image/skill5.png" style="border-radius: 15px">
+                    <div class="card-text">
+                        SASS
+                    </div>
+                </div>
+
+                <div class="card-content col s6 l4">
+                    <img src="./image/mysql.png" style="border-radius: 15px">
+                    <div class="card-text">
+                        MySQL
+                    </div>
+
+                </div>
+                <div class="card-content col s6 l4">
+                    <img src="./image/mongodb.png" style="border-radius: 15px">
+                    <div class="card-text">
+                        MongoDB
+                    </div>
+                </div>
+
             </div>
-          </div>
-
-      </div>
-      <button id="scroll-down-2" class="tw-btn-clear scroll-down-trigger" ><i class="fa fa-angle-double-down" aria-hidden="true"></i></button>
-
-      </div>
-      <div id="introduction" class="main-content indigo-d-3">
-
-        <div class="tw-navbar fixed-nav indigo-d-3">
-            <ul>
-                <li class="logoTitle left not-cursor"><i class="fa fa-smile-o" aria-hidden="true"></i></i>&nbsp;자기소개</a></li>
-            </ul>
-        </div>
-
-        <div class="content-card row">
-          <div class="card-content col s12">
-            <img src="./image/soldier2.png">
-            <div class="card-text">
-              <div style="margin-bottom:1rem;">군인에서 개발자가 되기까지.</div>
-              특성화고 출신으로 군장학생으로 입학하여서 20살이 되자마자 입대를 하였습니다.
-  공구를 들고 화기정비를 하던 정비병생활과 간부로서 수리관 생활을 합쳐 3년이라는 시간을 군에서 보내는 동안 우연히 프로그래밍 교육을 접할 기회가 생겨 2주간의 파견 기간 동안 Java 기초 교육을 들을 수 있었습니다.
-  교육 기간 동안 절차지향언어, 객체지향 언어 구분도 못 하는 저는 단순히 저녁마다 담당 강사님께서 내주시는 프로그래밍에 문제를 해결하는 과정에서의 재미를 느끼게 되었고, 교육 기간이 끝난 이후에도 c언어의 기초 책을 사서 취미로 코딩을 하게 되었습니다.
-  이후에 저는 개발자가 되겠다는 꿈을 가지게 되면서 전역을 하였으며, 사전에 얻은 정보를 통해 국비학원을 6개월 동안 다니면서 본격적으로 프로그래밍을 접하게 되었습니다. 국비학원을 다니는 동안 하루하루를 프로그래밍 공부에 전념하였으며, HTML, CSS, Javascript를 접한 이후에는 JSP 쪽 서버개발보다는 프론트엔드 언어에 흥미를 느껴, js 기반의 server-side 언어인 Node.js와 Javascript를 공부하게 되었고 그 과정에서 서버와 클라이언트 모두 다룰 수 있는 full-stack 개발자가 되겠다는 목표가 생겼으며, 그 목표를 이루기 위해서 현재도 꾸준히 공부 중인 예비 개발자입니다.
-            </div>
-          </div>
+            <button id="scroll-down-2" class="tw-btn-clear scroll-down-trigger"><i class="fa fa-angle-double-down" aria-hidden="true"></i></button>
 
         </div>
-        <button id="scroll-down-3" class="tw-btn-clear scroll-down-trigger" ><i class="fa fa-angle-double-down" aria-hidden="true"></i></button>
-      </div>
+        <div id="introduction" class="main-content indigo-d-3">
 
-      <div id="resume" class="main-content indigo-d-4 last-content">
-
-        <div class="tw-navbar fixed-nav indigo-d-4">
-            <ul>
-                <li class="logoTitle left not-cursor"><i class="fa fa-book" aria-hidden="true"></i>&nbsp;포트폴리오</a></li>
-            </ul>
-        </div>
-
-        <div class="content-card  row">
-
-
-            <div class="card black poliocard col l4 s12">
-              <div class="card-content" style="font-weight:bold; text-align:center;">
-                <div style="margin-bottom:1rem;">간단한 form 유효성 검증 예제</div>
-                <img class="hide-m" src="./image/valid1.jpg">
-                <div class="light-blue-text" onclick="javascript:window.open('./valid.html')" style="cursor:pointer; margin-top:0.5rem">페이지 이동</div>
-              </div>
-
-            </div>
-              <div class="card black  poliocard col l4 s12" >
-              <div class="card-content" style="font-weight:bold; text-align:center;">
-                <div style="margin-bottom:1rem;">T 아카데미 Node.js 강의 정리한내용</div>
-                <img class="hide-m" src="./image/이수증.png">
-                <div class="light-blue-text" onclick="javascript:window.open('https://github.com/tawon2137/NodejsStudy')" style="cursor:pointer; margin-top:0.5rem">페이지 이동</div>
-              </div>
+            <div class="tw-navbar fixed-nav indigo-d-3">
+                <ul class="container">
+                    <li class="logoTitle left not-cursor"><i class="fa fa-smile-o" aria-hidden="true"></i></i>&nbsp;자기소개</a>
+                    </li>
+                </ul>
             </div>
 
+            <div class="content-card row">
+                <div class="card-content col s12">
+                    <img src="./image/soldier2.png">
+                    <div class="card-text">
+                        <div style="margin-bottom:1rem;">군인에서 개발자가 되기까지.</div>
+                        특성화고 출신으로 군장학생으로 입학하여서 20살이 되자마자 입대를 하였습니다. 공구를 들고 화기정비를 하던 정비병생활과 간부로서 수리관 생활을 합쳐 3년이라는 시간을 군에서 보내는 동안 우연히 프로그래밍 교육을 접할 기회가 생겨 2주간의 파견 기간 동안 Java 기초 교육을 들을 수 있었습니다. 교육 기간 동안 절차지향언어, 객체지향 언어 구분도 못 하는 저는 단순히 저녁마다 담당 강사님께서 내주시는 프로그래밍에 문제를 해결하는 과정에서의 재미를
+                        느끼게 되었고, 교육 기간이 끝난 이후에도 c언어의 기초 책을 사서 취미로 코딩을 하게 되었습니다. 이후에 저는 개발자가 되겠다는 꿈을 가지게 되면서 전역을 하였으며, 사전에 얻은 정보를 통해 국비학원을 6개월 동안 다니면서 본격적으로 프로그래밍을 접하게 되었습니다. 국비학원을 다니는 동안 하루하루를 프로그래밍 공부에 전념하였으며, HTML, CSS, Javascript를 접한 이후에는 JSP 쪽 서버개발보다는
+                        프론트엔드 언어에 흥미를 느껴, js 기반의 server-side 언어인 Node.js와 Javascript를 공부하게 되었고 그 과정에서 서버와 클라이언트 모두 다룰 수 있는 full-stack 개발자가 되겠다는 목표가 생겼으며, 그 목표를 이루기 위해서 현재도 꾸준히 공부 중인 예비 개발자입니다.
+                    </div>
+                </div>
 
-
+            </div>
+            <button id="scroll-down-3" class="tw-btn-clear scroll-down-trigger"><i class="fa fa-angle-double-down" aria-hidden="true"></i></button>
         </div>
 
-      </div>
+        <div id="resume" class="main-content indigo-d-4 last-content">
+
+            <div class="tw-navbar fixed-nav indigo-d-4">
+                <ul class="container">
+                    <li class="logoTitle left not-cursor"><i class="fa fa-book" aria-hidden="true"></i>&nbsp;포트폴리오</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="content-card  row">
+
+
+                <div class="card black poliocard col l4 s12">
+                    <div class="card-content" style="font-weight:bold; text-align:center;">
+                        <div style="margin-bottom:1rem;">간단한 form 유효성 검증 예제</div>
+                        <img class="hide-m" src="./image/valid1.jpg">
+                        <div class="light-blue-text" onclick="javascript:window.open('./valid.html')" style="cursor:pointer; margin-top:0.5rem">페이지 이동</div>
+                    </div>
+                </div>
+                <div class="card black poliocard col l4 s12">
+                    <div class="card-content" style="font-weight:bold; text-align:center;">
+                        <div style="margin-bottom:1rem;">TW Css</div>
+                        <img class="hide-m" src="./image/twcss.jpg">
+                        <div class="light-blue-text" onclick="javascript:window.open('./components/main.html')" style="cursor:pointer; margin-top:0.5rem">페이지 이동</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </main>
     <footer class="black indigo-l-5-text">
-      <!-- 아래 -->
-      <div class="footer-content">
-        <div class="content-text">페이지 템플릿은 직접 개발한 오픈소스를 기반으로 하고있습니다.<br>
-          <span class="gitUrl light-blue-text" onclick="javascript:window.open('https://github.com/tawon2137/TW.js')" ><i class="fa fa-github"></i>git project URL</span>,
-          <span class="gitUrl light-blue-text" onclick="javascript:window.open('http://font.iropke.com/batang/')"> font license</span>
+        <!-- 아래 -->
+        <div class="footer-content">
+            <div class="content-text">페이지 템플릿은 직접 개발한 오픈소스를 기반으로 하고있습니다.<br>
+                <span class="gitUrl light-blue-text" onclick="javascript:window.open('https://github.com/tawon2137/TW.js')"><i class="fa fa-github"></i>git project URL</span>,
+                <span class="gitUrl light-blue-text" onclick="javascript:window.open('http://font.iropke.com/batang/')"> font license</span>
+            </div>
+            <div class="footer-button-group">
+                <a class="tw-btn-clear waves-effect view-icon white-text" onclick="javascript:window.open('https://github.com/tawon2137')" data-waveColor="white2"><i class="fa fa-github"></i></a>
+                <a class="tw-btn-clear waves-effect view-icon indigo-text" data-waveColor="white2"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+            </div>
         </div>
-        <div class="footer-button-group">
-          <a class="tw-btn-clear waves-effect view-icon white-text"  onclick="javascript:window.open('https://github.com/tawon2137')" data-waveColor="white2" ><i class="fa fa-github"></i></a>
-          <a class="tw-btn-clear waves-effect view-icon indigo-text" data-waveColor="white2" ><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-        </div>
-      </div>
-      <button id="scroll-up" class="tw-btn-clear scroll-up-trigger" ><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
-    </footer >
+        <button id="scroll-up" class="tw-btn-clear scroll-up-trigger"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+    </footer>
 
-    <script type="text/javascript" src="./devjs/lib/hammer.js"></script>
+
     <script type="text/javascript" src="./devjs/lib/TweenLite.js"></script>
-    <script type="text/javascript" src="./devjs/twCom.min.js"></script>
+    <script type="text/javascript" src="./devjs/TW.js"></script>
     <script type="text/javascript" src="./devjs/scroll.js"></script>
-  </body>
+</body>
+
 </html>

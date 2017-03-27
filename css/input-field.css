@@ -1,17 +1,3 @@
-::-webkit-input-placeholder {
-  color: grey; }
-
-:-moz-placeholder {
-  /* Firefox 18- */
-  color: grey; }
-
-::-moz-placeholder {
-  /* Firefox 19+ */
-  color: grey; }
-
-:-ms-input-placeholder {
-  color: grey; }
-
 .input-field-label {
   bottom: 0;
   font-size: 1rem;
@@ -23,11 +9,19 @@
   transform-origin: 0 0;
   white-space: nowrap;
   text-align: left;
+  color: grey;
   -webkit-transition: color 0.2s, transform 0.2s;
   -moz-transition: color 0.2s, transform 0.2s;
   -o-transition: color 0.2s, transform 0.2s;
   -ms-transition: color 0.2s, transform 0.2s;
   transition: color 0.2s, transform 0.2s; }
+  .input-field-label.fixed {
+    -webkit-transform: translateY(-1.5rem) scale(0.7);;
+    -moz-transform: translateY(-1.5rem) scale(0.7);;
+    -o-transform: translateY(-1.5rem) scale(0.7);;
+    -ms-transform: translateY(-1.5rem) scale(0.7);;
+    transform: translateY(-1.5rem) scale(0.7);;
+    font-weight: bold; }
 
 .tw-input-field {
   position: relative;
@@ -315,8 +309,10 @@ input[type=search] {
   -o-transform: scaleY(0.7);
   -ms-transform: scaleY(0.7);
   transform: scaleY(0.7);
-  border-radius: 5px; }
+  border-radius: 2px;
+  color: #283593; }
   .tw-dropdown li {
+    font-weight: bold;
     text-transform: none;
     list-style-type: none;
     min-height: 2.5rem;

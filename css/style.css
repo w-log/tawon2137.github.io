@@ -1,21 +1,15 @@
 *, *:before, *:after {
   box-sizing: inherit; }
 
+a {
+  text-decoration: none; }
+
 html {
   box-sizing: border-box;
-  font-family: 'Iropke Batang', serif;
-  font-size: 12px; }
+  font-family: 'NotoSans', sans-serif; }
 
 body {
   margin: 0; }
-
-@media only screen and (min-width: 720px) {
-  html {
-    font-size: 14px; } }
-
-@media only screen and (min-width: 1024px) {
-  html {
-    font-size: 16px; } }
 
 .row {
   margin-left: auto;
@@ -341,6 +335,12 @@ body {
 .show-s {
   display: none !important; }
 
+html {
+  font-size: 16px; }
+
+.container {
+  width: 80% !important; }
+
 @media only screen and (max-width: 1366px) {
   .hide-l {
     display: inline-block !important; }
@@ -349,10 +349,18 @@ body {
   .hide-m {
     display: none !important; }
   .show-m {
-    display: inline-block !important; } }
+    display: inline-block !important; }
+  html {
+    font-size: 14px; }
+  .container {
+    width: 85% !important; } }
 
 @media only screen and (max-width: 720px) {
   .hide-s {
     display: none !important; }
   .show-s {
-    display: inline-block !important; } }
+    display: inline-block !important; }
+  html {
+    font-size: 12px; }
+  .container {
+    width: 95% !important; } }

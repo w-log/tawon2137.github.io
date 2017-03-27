@@ -1,55 +1,9 @@
 (function(){
 
-// easing 함수 주소 : http://goo.gl/5HLl8
-    function easeOut(t, b, c, d) {
-    	var ts=(t/=d)*t;
-    	var tc=ts*t;
-    	return b+c*(0.9*tc*ts + -4.35*ts*ts + 8.6*tc + -8.7*ts + 4.55*t);
-    }
+    var position = function () {
+      return document.documentElement.scrollTop || document.body.parentNode.scrollTop || document.body.scrollTop;
+    };
 
-
-  // requestAnimationFrame 이 지원안되는 브라우저에서는 setTimeout 함수를 이용함.requestAnimationFrame은 실행시 60프레임을 보장함.
-    var requestAnimFrame = (function(){
-      return  window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function( callback ){ window.setTimeout(callback, 1000 / 60); };
-    })();
-
-    // 현재 scrollTop 을 반환하는 함수
-  function position() {
-    return document.documentElement.scrollTop || document.body.parentNode.scrollTop || document.body.scrollTop;
-  }
-  function scrollTo(to, callback, duration) {
-  // 스크롤위치를 이동시키는 함수
-  function move(amount) {
-    document.documentElement.scrollTop = amount;
-    document.body.parentNode.scrollTop = amount;
-    document.body.scrollTop = amount;
-  }
-
-  //변수 초기화
-  var start = position(),
-    change = to - start,
-    currentTime = 0,
-    increment = 1000 / 60;
-    duration = (typeof(duration) === 'undefined') ? 3000 : duration; //anmation time
-  //animate 진행 requireAnimation을 통한 호출로 인한 60프레임이 보장됨
-  var animateScroll = function() {
-    // 애니메이션 시간누적 1프레임당 1000ms에서 60으로 나눈값이 누적됨 ( 1000 / 60 === 1초당 60프레임 )
-    currentTime += increment;
-    // easing 함수 호출
-    var val = easeOut(currentTime, start, change, duration);
-    // move 함수 호출
-    move(val);
-    // 현재 애니메이션 시간이 druation을 초과했는지 확인 현재시간이 < 애니메이션 시간보다 작으면 애니메이션 진행 초과시에는 콜백함수 호출
-    if (currentTime <= duration) {
-      requestAnimFrame(animateScroll);
-    } else {
-      if (callback && typeof(callback) === 'function') {
-        callback();
-      }
-    }
-  };
-  animateScroll();
-  }
 
   window.addEventListener("DOMContentLoaded", function(e){
     var scrollBtn_1 = document.getElementById("scroll-down-1");
@@ -67,7 +21,7 @@
         var mainTop = document.getElementsByTagName("main")[0].offsetTop;
 
         var Top = target !== null ? document.getElementById(target).offsetTop + mainTop : 0 ;
-        scrollTo(Top, undefined, 1500);
+        twCom.fn.scrollAnimate(Top, undefined, 1500, "easeOut");
     };
 
     scrollBtn_1.addEventListener("click",clickToscroll);

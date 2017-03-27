@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>TW Css</title>
+    <link href='https://fonts.googleapis.com/css?family=Baloo+Bhaina' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/TW.css">
+    <link rel="stylesheet" href="../css/testpage.css">
+    <link rel="stylesheet" href="../css/prism.css">
+</head>
+<body>
+
+
+<header w3-include-html="./header.html" ></header>
+<script src="../devjs/w3data.js"></script>
+
+<main class="row container">
+    <div class="header-text col s12" style="margin-bottom:2rem;">Grid</div>
+    <div class="content-text col s12" >Grid System은 <a class="indigo-a-3-text"
+            href="http://materializecss.com/grid.html" target="_blank">Meterialize Grid</a>를 그대로 구현했습니다.기본적으로 <span class="pink-a-3-text">column Grid는 row라는 class안에서만 사용하게 되어있으며,</span> <br> 항상 브라우저크기와 상관없이 너비를 12개로 나눠서 레이아웃을 구성할 수 있습니다. </div>
+  <div id="grid-container" class="row"></div>
+  <pre class="language-markup" data-src="../componentcode/grid1.html"></pre>
+  <div class="content-text col s12" >또한 아래와 같이 미디어쿼리를 통해서 특정디바이스에서 부분별로 column 크기를 줄 수 있습니다.</div>
+  <div class="row">
+    <div class="col s12 m6 l4 grid-block indigo-a-3 white-text">col s12 m6 l4</div>
+    <div class="col s12 m6 l4 grid-block indigo-a-3 white-text">col s12 m6 l4</div>
+    <div class="col s12 m12 l4 grid-block indigo-a-3 white-text">col s12 m12 l4</div>
+  </div>
+  <pre class="language-markup" data-src="../componentcode/grid2.html"></pre>
+
+
+
+  <div class="content-text col s12" >아래 예제는 pull과 push명령을 통해 column내에 엘리먼트위치를 조정할 수 있습니다.</div>
+  <div class="row">
+    <div class="col push-s6 s6  grid-block indigo-a-3 white-text">push-s6</div>
+    <div class="col pull-s6 s6 grid-block indigo-a-3 white-text">pull-s6</div>
+  </div>
+  <pre class="language-markup" data-src="../componentcode/grid3.html"></pre>
+
+
+  <div class="content-text col s12" >아래 예제는 Container 영역을 정의해서 디바이스별로 페이지 간격을 자연스럽게 조정해줍니다.</div>
+  <div class="row container">
+    <div class="col s12 grid-block indigo-a-3 white-text">container 내부의 column</div>
+  </div>
+  <div class="row">
+    <div class="col s12 grid-block indigo-a-3 white-text">container 없는 column</div>
+  </div>
+
+  <pre class="language-markup" data-src="../componentcode/grid4.html"></pre>
+</main>
+
+
+<script src="../devjs/TweenLite.js"></script>
+<script src="../devjs/TW.js"></script>
+<script src="../devjs/prism.js"></script>
+<script>
+  window.addEventListener("DOMContentLoaded", function(){
+      var gridContainer = document.getElementById("grid-container");
+      var gridBlock = null;
+
+      for (var i = 1; i <= 12; i++){
+        gridBlock = document.createElement("div");
+        gridBlock.className = "col s1 grid-block indigo-a-3 white-text";
+        gridBlock.innerText = i;
+        gridBlock.setAttribute("data-grid", "col s" + i);
+        gridContainer.appendChild(gridBlock);
+      }
+  });
+</script>
+</body>
+
+</html>

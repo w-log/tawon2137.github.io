@@ -1,10 +1,41 @@
-/*
- * Iropke Batang (Korean)
- * http://font.iropke.com/batang/
- */
 @font-face {
-  font-family: 'Iropke Batang';
+  font-family: "NotoSans";
+  font-style: normal;
+  font-weight: 100;
+  src: url("./notosans/NotoSans-Thin.eot");
+  src: url("./notosans/NotoSans-Thin.eot?#iefix") format("embedded-opentype"), url("./notosans/NotoSans-Thin.woff2") format("woff2"), url("./notosans/NotoSans-Thin.woff") format("woff"), url("./notosans/NotoSans-Thin.otf") format("opentype"); }
+
+@font-face {
+  font-family: "NotoSans";
+  font-style: normal;
+  font-weight: 300;
+  src: url("./notosans/NotoSans-Light.eot");
+  src: url("./notosans/NotoSans-Light.eot?#iefix") format("embedded-opentype"), url("./notosans/NotoSans-Light.woff2") format("woff2"), url("./notosans/NotoSans-Light.woff") format("woff"), url("./notosans/NotoSans-Light.otf") format("opentype"); }
+
+@font-face {
+  font-family: "NotoSans";
   font-style: normal;
   font-weight: 400;
-  src: url(//cdn.jsdelivr.net/font-iropke-batang/1.2/IropkeBatangM.eot);
-  src: url(//cdn.jsdelivr.net/font-iropke-batang/1.2/IropkeBatangM.eot?#iefix) format("embedded-opentype"), url(//cdn.jsdelivr.net/font-iropke-batang/1.2/IropkeBatangM.woff) format("woff"), url(//cdn.jsdelivr.net/font-iropke-batang/1.2/IropkeBatangM.ttf) format("truetype"); }
+  src: url("./notosans/NotoSans-Regular.eot");
+  src: url("./notosans/NotoSans-Regular.eot?#iefix") format("embedded-opentype"), url("./notosans/NotoSans-Regular.woff2") format("woff2"), url("./notosans/NotoSans-Regular.woff") format("woff"), url("./notosans/NotoSans-Regular.otf") format("opentype"); }
+
+@font-face {
+  font-family: "NotoSans";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./notosans/NotoSans-Medium.eot");
+  src: url("./notosans/NotoSans-Medium.eot?#iefix") format("embedded-opentype"), url("./notosans/NotoSans-Medium.woff2") format("woff2"), url("./notosans/NotoSans-Medium.woff") format("woff"), url("./notosans/NotoSans-Medium.otf") format("opentype"); }
+
+@font-face {
+  font-family: "NotoSans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./notosans/NotoSans-Bold.eot");
+  src: url("./notosans/NotoSans-Bold.eot?#iefix") format("embedded-opentype"), url("./notosans/NotoSans-Bold.woff2") format("woff2"), url("./notosans/NotoSans-Bold.woff") format("woff"), url("./notosans/NotoSans-Bold.otf") format("opentype"); }
+
+@font-face {
+  font-family: "NotoSans";
+  font-style: normal;
+  font-weight: 900;
+  src: url("./notosans/NotoSans-Black.eot");
+  src: url("./notosans/NotoSans-Black.eot?#iefix") format("embedded-opentype"), url("./notosans/NotoSans-Black.woff2") format("woff2"), url("./notosans/NotoSans-Black.woff") format("woff"), url("./notosans/NotoSans-Black.otf") format("opentype"); }

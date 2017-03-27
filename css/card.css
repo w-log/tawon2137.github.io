@@ -1,8 +1,10 @@
 .card {
   background-color: white;
-  border-radius: 5px;
+  border-radius: 2px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin-bottom: 10px; }
+  .card.col {
+    padding: 0; }
   .card.sidetemple {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -34,7 +36,7 @@
         right: 0;
         max-width: 100%;
         width: auto;
-        border-radius: 5px 0 0 5px; }
+        border-radius: 2px 0 0 2px; }
   .card .card-title {
     display: block;
     margin: 0;
@@ -44,15 +46,15 @@
     text-align: left;
     padding: 0.2rem; }
   .card .card-profile img {
-    border-radius: 5px 5px 0 0;
+    border-radius: 2px 2px 0 0;
     width: 100%; }
   .card .card-content {
-    border-radius: 5px;
+    border-radius: 2px;
     padding: 0.75rem; }
   .card .card-action {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     padding: 1.5rem; }
-    .card .card-action a:not(.tw-btn) {
+    .card .card-action a:not([class|="tw"]) {
       margin-right: 20px;
       color: #ffb300;
       text-decoration: none;
@@ -61,6 +63,6 @@
       -o-transition: all 0.2s ease-in;
       -ms-transition: all 0.2s ease-in;
       transition: all 0.2s ease-in; }
-      .card .card-action a:not(.tw-btn):hover {
+      .card .card-action a:not([class|="tw"]):hover {
         color: #ff6f00;
         text-decoration: underline; }
