@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>TW Css</title>
+    <link rel="shortcut icon" href="../image/favicon3.ico">
+    <link href='https://fonts.googleapis.com/css?family=Baloo+Bhaina' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/TW.css">
+    <link rel="stylesheet" href="../css/testpage.css">
+    <link rel="stylesheet" href="../css/prism.css">
+</head>
+
+<body>
+    <header w3-include-html="./header.html"></header>
+    <main>
+      <div class="row container scroll-block first-block">
+        <div class="header-text col s12">Scroll Animation</div>
+        <div class="content-text col s12"><span class="pink-a-3-text">스크롤에 이동시 애니메이션을 간단하게 구현할 수 있습니다.</span><br>
+        사용방법은 아래와 같습니다.</div>
+        <a class="tw-btn-clear white-text scroll-down-trigger"><i class="fa fa-angle-double-down black-text" aria-hidden="true"></i></a>
+        <pre class="language-javascript" data-src="../componentcode/scroll1.js"></pre>
+      </div>
+        <div class="scroll-block indigo-a-2">
+          <a class="tw-btn-clear white-text  scroll-down-trigger"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
+
+        </div>
+        <div class="scroll-block indigo-a-3">
+          <a class="tw-btn-clear white-text  scroll-down-trigger"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
+
+        </div>
+        <div class="scroll-block indigo-a-4">
+          <a class="tw-btn-clear white-text  scroll-up-trigger"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a>
+        </div>
+    </main>
+    <script src="../devjs/TweenLite.js"></script>
+    <script src="../devjs/TW.js"></script>
+    <script src="../devjs/prism.js"></script>
+    <script src="../devjs/w3data.js"></script>
+    <script>
+      var arr_block = document.getElementsByClassName("scroll-block");
+      arr_block[0].querySelector("a").onclick = function (e) {
+        twCom.fn.scrollAnimate(arr_block[1].offsetTop, undefined, 1500);
+      }
+      arr_block[1].querySelector("a").onclick = function (e) {
+        twCom.fn.scrollAnimate(arr_block[2].offsetTop, undefined, 1500);
+      }
+      arr_block[2].querySelector("a").onclick = function (e) {
+        twCom.fn.scrollAnimate(arr_block[3].offsetTop, undefined, 1500);
+      }
+      arr_block[3].querySelector("a").onclick = function (e) {
+        twCom.fn.scrollAnimate(0, undefined, 1500);
+      }
+    </script>
+
+</body>
+
+</html>

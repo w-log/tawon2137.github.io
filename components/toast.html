@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>TW Css</title>
+    <link rel="shortcut icon" href="../image/favicon3.ico">
+    <link href='https://fonts.googleapis.com/css?family=Baloo+Bhaina' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/TW.css">
+    <link rel="stylesheet" href="../css/testpage.css">
+    <link rel="stylesheet" href="../css/prism.css">
+</head>
+
+<body>
+    <header w3-include-html="./header.html"></header>
+    <main class="row container">
+        <div class="header-text col s12">Toast</div>
+        <div class="content-text col s12"><span class="pink-a-3-text">TW Css는 alert창을 대신할 컴포넌트를 구현하였습니다.</span> 사용방법도 매우 간편하고 장점은 인라인방식으로도 줄 수 있습니다.<br>
+        모바일과 pc에서 Toast메세지가 어떻게보이는지 확인해보실 수 있습니다.</div>
+        <div class="header-text col s12">javascript 생성</div>
+        <a id="toastBtn" class="col s12 tw-btn indigo-d-3 white-text" style="font-weight:bold; margin-bottom:1rem;" >Toast Message 생성 버튼</a>
+        <pre class="language-markup" data-src="../componentcode/toast1.html"></pre>
+        <div class="content-text col s12">twCom객체는 TW Css에서 사용하는 global 객체입니다. jquery.fn을 확장하듯이 모듈의 기능을 twCom객체를 통해 확장 할 수 있습니다.<br>
+        twCom객체의 toast 메서드는 첫번쨰인자로 출력할 문자열을 받게되고 두번째인자는 메시지를 유지할 시간을 전달하게됩니다.<br> 첫번째 인자만 주게되는 경우에는 기본시간 2000ms가 적용됩니다. </div>
+        <div class="header-text col s12">HTML inline 방식으로 생성</div>
+        <button class="col s12 tw-btn indigo-d-3 white-text" style="font-weight:bold;" onclick="javascript:twCom.fn.toast('toast 메세지는 마우스 or 터치 양쪽 스와이프로 제거', 4000);">이 버튼을 클릭하면 toast Message를 볼 수 있어요.</button>
+        <pre class="language-markup" data-src="../componentcode/toast2.html"></pre>
+
+    </main>
+    <script src="../devjs/TweenLite.js"></script>
+    <script src="../devjs/TW.js"></script>
+    <script src="../devjs/prism.js"></script>
+    <script src="../devjs/w3data.js"></script>
+    <script>
+      document.getElementById("toastBtn").addEventListener("click", function (e) {
+          twCom.fn.toast("Hi ~ I m toast Message", 4000);
+      });
+    </script>
+</body>
+
+</html>

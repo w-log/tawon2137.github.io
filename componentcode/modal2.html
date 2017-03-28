@@ -1,0 +1,26 @@
+
+<div id="yourmodal" class="modal">
+    <div class="modal-content row">
+      content zone
+    </div>
+    <div class="modal-footer">
+        <a class="tw-btn-clear waves-effect closeModal">닫기</a>
+    </div>
+</div>
+<a class="col s12 tw-btn openModal indigo-d-3 white-text" data-target="yourmodal" style="font-weight:bold;">이 버튼으로 모달창을 열 수 있습니다.2</a>
+
+
+<script>
+twCom.Modal.init("yourmodal",
+{
+  onClose : false, // Modal창 밖을 클릭하면 Modal close이벤트 실행여부 default : true
+  startY : 200, // translateY 애니메이션 시작위치 단위 : % default 150%
+  endY : 100, // translateY 애니메이션 끝 위치 단위 : % default : 60%
+  openCallback : function () { // Modal open Event Callback Function
+    console.log("모달이 오픈되다.")
+  },
+  closeCallback : function () { // Modal close Event Callback Function
+    console.log("모달이 Close되다.")
+  }
+});
+</script>

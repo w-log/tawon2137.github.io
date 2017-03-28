@@ -1,6 +1,15 @@
+@charset "UTF-8";
 header, main {
   display: block;
   padding-left: 250px; }
+
+.side-nav-logo {
+  font-weight: bold;
+  text-align: center;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 60px;
+  height: 60px; }
 
 .header-text {
   font-weight: bold;
@@ -20,6 +29,12 @@ header, main {
   font-size: 1.2rem;
   padding: 0 !important;
   border: 1px solid #f1f1f1; }
+
+.scroll-block {
+  height: 100vh;
+  position: relative; }
+  .scroll-block.first-block {
+    height: auto; }
 
 pre {
   width: 100%;
@@ -58,14 +73,143 @@ pre[class*="language-"]:before {
   .color-pattern div[class*='-l-'], .color-pattern div[class*='white'], .color-pattern div[class*='-a-'], .color-pattern div[class*="transparent"], .color-pattern div[class*="basic"] {
     color: black; }
 
+.scroll-down-trigger {
+  position: absolute;
+  bottom: 1rem;
+  color: white;
+  font-size: 3rem;
+  padding: 0 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  width: 200px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 1;
+  -webkit-animation: triggerMove 0.75s infinite;
+  -moz-animation: triggerMove 0.75s infinite;
+  -ms-animation: triggerMove 0.75s infinite;
+  -o-animation: triggerMove 0.75s infinite;
+  animation: triggerMove 0.75s infinite;
+  overflow: visible; }
+  .scroll-down-trigger::after {
+    content: "아래로 이동";
+    position: absolute;
+    font-size: 1rem;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    width: 12rem;
+    padding: 0 1rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    -webkit-transform: translateY(-60px);
+    -moz-transform: translateY(-60px);
+    -o-transform: translateY(-60px);
+    -ms-transform: translateY(-60px);
+    transform: translateY(-60px);
+    z-index: 100;
+    opacity: 1;
+    pointer-events: none;
+    -webkit-transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);;
+    -moz-transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);;
+    -o-transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);;
+    -ms-transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);; }
+  .scroll-down-trigger:hover {
+    -webkit-animation: none;
+    -moz-animation: none;
+    -ms-animation: none;
+    -o-animation: none;
+    animation: none; }
+    .scroll-down-trigger:hover::after {
+      opacity: 0;
+      -webkit-transform: translateY(-30px);
+      -moz-transform: translateY(-30px);
+      -o-transform: translateY(-30px);
+      -ms-transform: translateY(-30px);
+      transform: translateY(-30px); }
+
+.scroll-up-trigger {
+  position: absolute;
+  bottom: 3rem;
+  color: white;
+  font-size: 3rem;
+  padding: 0 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  width: 200px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 1;
+  -webkit-animation: triggerMove 0.75s infinite;
+  -moz-animation: triggerMove 0.75s infinite;
+  -ms-animation: triggerMove 0.75s infinite;
+  -o-animation: triggerMove 0.75s infinite;
+  animation: triggerMove 0.75s infinite;
+  overflow: visible; }
+  .scroll-up-trigger::after {
+    content: "맨위로  이동";
+    position: absolute;
+    font-size: 1rem;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    width: 12rem;
+    padding: 0 1rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    -webkit-transform: translateY(40px);
+    -moz-transform: translateY(40px);
+    -o-transform: translateY(40px);
+    -ms-transform: translateY(40px);
+    transform: translateY(40px);
+    z-index: 100;
+    opacity: 1;
+    pointer-events: none;
+    -webkit-transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);;
+    -moz-transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);;
+    -o-transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);;
+    -ms-transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);; }
+  .scroll-up-trigger:hover {
+    -webkit-animation: none;
+    -moz-animation: none;
+    -ms-animation: none;
+    -o-animation: none;
+    animation: none; }
+    .scroll-up-trigger:hover::after {
+      opacity: 0;
+      -webkit-transform: translateY(20px);
+      -moz-transform: translateY(20px);
+      -o-transform: translateY(20px);
+      -ms-transform: translateY(20px);
+      transform: translateY(20px); }
+
 @media only screen and (max-width: 1366px) {
+  .side-nav-logo {
+    font-size: 1.5rem; }
   header {
     padding-left: 0; }
   main {
     padding-left: 0; } }
+
+@media only screen and (max-width: 720px) {
+  .side-nav-logo {
+    font-size: 1.5rem; } }
 
 @-webkit-keyframes afterMove {50% {transform:translateX(-5px);}, 100%{transform:translateY(0px);}}
   @-moz-keyframes afterMove {50% {transform:translateX(-5px);}, 100%{transform:translateY(0px);}}
   @-o-keyframes afterMove {50% {transform:translateX(-5px);}, 100%{transform:translateY(0px);}}
   @-ms-keyframes afterMove {50% {transform:translateX(-5px);}, 100%{transform:translateY(0px);}}
   @keyframes afterMove {50% {transform:translateX(-5px);}, 100%{transform:translateY(0px);}};
+@-webkit-keyframes triggerMove {50% {transform:translateY(-5px);}, 100%{transform:translateY(0px);}}
+  @-moz-keyframes triggerMove {50% {transform:translateY(-5px);}, 100%{transform:translateY(0px);}}
+  @-o-keyframes triggerMove {50% {transform:translateY(-5px);}, 100%{transform:translateY(0px);}}
+  @-ms-keyframes triggerMove {50% {transform:translateY(-5px);}, 100%{transform:translateY(0px);}}
+  @keyframes triggerMove {50% {transform:translateY(-5px);}, 100%{transform:translateY(0px);}};

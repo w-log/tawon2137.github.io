@@ -1,0 +1,17 @@
+
+<div id="mymodal" class="modal">
+    <div class="modal-content row">
+        content zone
+    </div>
+    <div class="modal-footer">
+        <a class="tw-btn-clear waves-effect">모달안에 clear button</a>
+    </div>
+</div>
+<a class="col s12 tw-btn openModal indigo-d-3 white-text" data-target="mymodal" style="font-weight:bold;">이 버튼으로 모달창을 열 수 있습니다.</a>
+
+
+<script>
+    twCom.Modal.init(document.getElementById("mymodal"));
+    //또는
+    twCom.Modal.init("mymodal");
+</script>

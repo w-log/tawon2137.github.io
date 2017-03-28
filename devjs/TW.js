@@ -132,7 +132,7 @@ __webpack_require__(6);
             currentTime += increment;
             // easing 함수 호출
             var val = easingCommand ? easing[easingCommand](currentTime, start, change, duration) :
-                easing["linear"](currentTime, start, change, duration);
+                easing["easeOut"](currentTime, start, change, duration);
             // move 함수 호출
             move(val);
             // 현재 애니메이션 시간이 druation을 초과했는지 확인 현재시간이 < 애니메이션 시간보다 작으면 애니메이션 진행 초과시에는 콜백함수 호출
@@ -666,33 +666,29 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*! Hammer.JS - v2.0.8 - 2016-04-23
 
     var DefaultOption = function() {
         this.shadow_opacity = 0.6; //default 0.5 최소 0 , 최대 1
-        this.start_top = "60";
-        this.start_top_suffix = "%";
-        this.end_top = "20";
-        this.end_top_suffix = "%";
-        this.modalOpen = function() {};
-        this.modalClose = function() {};
+        this.startY = "150";
+        this.suffix = "%";
+        this.endY = "60";
+        this.openCallback = function() {};
+        this.closeCallback = function() {};
         this.delay = 0.50;
-        this.shadow_onclick_close = true;
+        this.onClose = true;
 
         this.openOption = {
             display: "block",
-            top: (this.end_top + this.end_top_suffix),
             scaleX: 1,
             opacity: 1,
             ease: Power3.easeOut,
-            onComplete: this.modalOpen
+            onComplete: this.openCallback
         };
 
         this.closeOption = {
             display: "none",
-            top: (this.start_top + this.start_top_suffix),
             scaleX: 0.7,
             opacity: 0,
             ease: Power3.easeOut,
-            onComplete: this.modalClose
+            onComplete: this.closeCallback
         };
-
     };
 
     DefaultOption.prototype.setOption = function(newOption) {
@@ -706,24 +702,33 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*! Hammer.JS - v2.0.8 - 2016-04-23
     };
 
 
-    function Modal(modalElement) {
+    function Modal(modalElement, option) {
         if (this instanceof Modal) {
             this.Element = document.getElementById(modalElement) || modalElement;
             if (this.Element === null) {
                 return false;
             }
-            this.Init();
+            this.Init(option);
         } else {
-            return new Modal(modalElement);
+            return new Modal(modalElement, option);
         }
     }
 
 
-    Modal.prototype.Init = function() {
+    Modal.prototype.Init = function(newOption) {
         var self = this;
         var ele = this.Element;
-        var option = this.Option = new DefaultOption();
-        twCom.fn.cssObject(ele).setCss("top", (option.start_top + option.start_top_suffix));
+        this.Option = new DefaultOption();
+        this.Option = this.Option.setOption(newOption || {});
+        // console.log(this.Option);
+        var cssObject = {
+          "-moz-transform" : "translateY(" + (this.Option.startY + this.Option.suffix) + ")",
+          "-webkit-transform" : "translateY(" + (this.Option.startY + this.Option.suffix) + ")",
+          "-o-transform" : "translateY(" + (this.Option.startY + this.Option.suffix) + ")",
+          "-ms-transform" : "translateY(" + (this.Option.startY + this.Option.suffix) + ")",
+          "transform" : "translateY(" + (this.Option.startY + this.Option.suffix) + ")",
+        };
+        ele.setAttribute("style", twCom.fn.convertStyle(cssObject));
         this.openbtnSetting();
         this.closebtnSetting();
     };
@@ -736,7 +741,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*! Hammer.JS - v2.0.8 - 2016-04-23
         var buttons = document.querySelectorAll("[data-target=" + id + "]"); // querySelectorAll의 반환값은 Array임 무조건
         if (buttons.length > 0) {
             for (var index = 0; index < buttons.length; index++) {
-                buttons[index].addEventListener("click", this.openModal);
+                buttons[index].addEventListener("click", this.openModal.bind(this));
             }
         } else {
             throw new Error("Modal을 이벤트를 수행 할 component가 존재하지 않습니다.");
@@ -745,25 +750,25 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*! Hammer.JS - v2.0.8 - 2016-04-23
 
     Modal.prototype.closebtnSetting = function() {
         var buttons = this.Element.getElementsByClassName("closeModal"); // getElementsByClassName의 반환값은 Array임 무조건
-
         if (buttons.length > 0) {
             for (var index = 0; index < buttons.length; index++) {
                 buttons[index].setAttribute("data-target", this.Element.id);
-                buttons[index].addEventListener("click", this.closeModal);
+                buttons[index].addEventListener("click", this.closeModal.bind(this));
             }
         }
     };
 
 
-    Modal.prototype.openModal = function() {
-        var Ele = this.Element || this;
+    Modal.prototype.openModal = function(e) {
+        var Ele = e.target || e.srcElement;
         var target = Ele.getAttribute("data-target") || Ele.id;
-        var modal = (this === twCom.Modal[target] ? this : twCom.Modal[target]);
-
+        var modal = target === this.Element.getAttribute("id") ? this : "";
         if (modal) {
             var modalElement = modal.Element;
             var shadowElement = modal.createShadow(target);
             var modalOption = modal.Option;
+            modalOption.openOption.y = modalOption.endY + modalOption.suffix;
+            modalOption.openOption.onComplete = modalOption.openCallback;
             TweenLite.to(shadowElement, modalOption.delay, {
                 opacity: modalOption.shadow_opacity
             });
@@ -775,15 +780,15 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*! Hammer.JS - v2.0.8 - 2016-04-23
     };
 
     Modal.prototype.closeModal = function(e) {
-        var Ele = this.Element || this;
+        var Ele = e.target || e.srcElement;
         var target = Ele.getAttribute("data-target") || Ele.id;
-        var modal = (this === twCom.Modal[target] ? this : twCom.Modal[target]);
-
-
+        var modal = target === this.Element.getAttribute("id") ? this : "";
         if (modal) {
             var modalElement = modal.Element;
             var shadowElement = modal.shadowEle;
             var modalOption = modal.Option;
+            modalOption.closeOption.y = modalOption.startY + modalOption.suffix;
+            modalOption.closeOption.onComplete = modalOption.closeCallback;
 
             TweenLite.to(shadowElement, modalOption.delay, {
                 opacity: 0,
@@ -824,8 +829,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*! Hammer.JS - v2.0.8 - 2016-04-23
         var Option = this.Option;
         Shadowele.id = "modal-shadow";
         Shadowele.setAttribute("data-target", id);
-        if (Option.shadow_onclick_close) {
-            Shadowele.addEventListener("click", this.closeModal);
+        if (Option.onClose) {
+            Shadowele.addEventListener("click", this.closeModal.bind(this));
         }
         //옵션에서 준 Shadow_onclick_close  값에 따라 true면 그림자영역 클릭시 모달 close / false 이면 그림자영역 클릭이벤트를 설정하지않음.
         this.shadowEle = Shadowele;
@@ -850,10 +855,13 @@ window.addEventListener("DOMContentLoaded", function() {
 
 var pushpin = function() {
     // push-pin 대상의 main-content 라는 Element의 배열을 변수에 담는다.
+    if ( document.getElementsByTagName("main").length === 0 ){ return false; }
+
     var pushZones = document.getElementsByTagName("main")[0].querySelectorAll(".main-content");
     if (pushZones.length === 0) {
-        return false;
-    };
+          return false;
+    }
+
     /*
     main태그 상위에 위치한 헤더의 크기와 절대위치에서 top 좌표를 더해야
     현재 사용자가 스코롤링 하는 top 위치와 엘리먼트사이의 간격을 측정할수 있기떄문에 header 엘리먼트를 변수에 담음
