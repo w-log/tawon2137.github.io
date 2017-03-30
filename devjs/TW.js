@@ -118,9 +118,9 @@ __webpack_require__(6);
     }
     function getPropertyValue(element_css, propertyName){
       if ( propertyName === "transform" ){
-        return parseInt(element_css.getCss(propertyName).split(",")[4]);
+        return Number(element_css.getCss(propertyName).split(",")[4]);
       }else {
-        return parseInt(element_css.getCss(propertyName));
+        return Number(element_css.getCss(propertyName));
       }
     }
     function cssAnimation(element_css, propertyName, value, callback, duration, easingCommand){
@@ -1225,7 +1225,7 @@ window.addEventListener("DOMContentLoaded", function(e) {
 
             dragTarget_css.cssEach(cssObject);
             document.body.style.overflow = "";
-            var x = parseInt("-" + sidenav_css.getCss("width").replace(unitExp, ""));
+            var x = Number("-" + sidenav_css.getCss("width").replace(unitExp, ""));
             twCom.fn.cssAnimate(sidenav_css, "transform" , x , function(){
               sidenav_css.setCss("transform", "");
             }, duration, "easeOut");
