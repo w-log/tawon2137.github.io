@@ -1,5 +1,5 @@
 
-# 개발자 김태웅의 github io 페이지 Repositorie
+# 개발자 김태웅의 github io 페이지 Repository
 
 
 ---
