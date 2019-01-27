@@ -51,7 +51,12 @@
     color: #5C6BC0; }
 
 .poliocard {
-  margin: 0.5rem; }
+  background: transparent;
+  padding-bottom: 2rem; }
+
+  .poliocard .card {
+    padding: 0.75rem;
+  }
 
 #aboutModal .profile > img {
   width: 80px;
@@ -128,7 +133,8 @@ main {
       width: 40%; }
     .content-card .card-content .card-text {
       text-align: center;
-      font-weight: 800;
+      font-weight: normal;
+      line-height: 1.15;
       margin-top: 0.5rem; }
   .content-card.show {
     opacity: 1; }
@@ -273,8 +279,6 @@ main {
     font-size: 1.5rem; } }
 
 @media only screen and (max-width: 720px) {
-  .poliocard {
-    margin: 0.3rem 0; }
   #aboutModal {
     width: 300px; }
   .scroll-down-trigger, .scroll-up-trigger {
